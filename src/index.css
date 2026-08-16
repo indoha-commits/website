@@ -1,0 +1,150 @@
+@import "@fontsource/geist-sans/300.css";
+@import "@fontsource/geist-sans/400.css";
+@import "@fontsource/geist-sans/500.css";
+@import "@fontsource/geist-sans/600.css";
+@import "@fontsource/geist-sans/700.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "@fontsource/jetbrains-mono/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .home-theme {
+    --background: 0 0% 0.4%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 3% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 3% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 234 60% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 234 60% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 240 4% 10%;
+    --muted-foreground: 0 0% 50%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 234 60% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overflow-x: clip;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    @apply bg-[#010102] text-white font-sans antialiased;
+    overflow-x: clip;
+  }
+}
+
+@layer utilities {
+  .container-wide {
+    @apply max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-24 lg:py-28;
+    position: relative;
+  }
+
+  .product-page .section-padding {
+    @apply py-14 sm:py-16 md:py-20 lg:py-20;
+  }
+
+  .section-padding::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.04), transparent);
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+
+@keyframes cta-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+  50% { box-shadow: 0 0 24px 4px rgba(59, 130, 246, 0.15); }
+}
+
+.animate-cta-glow {
+  animation: cta-glow 3s ease-in-out 2s infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  50% { box-shadow: 0 0 16px 4px rgba(59, 130, 246, 0.2); }
+}
+
+.animate-badge-pulse {
+  animation: badge-pulse 2.5s ease-in-out infinite;
+}
