@@ -16,7 +16,7 @@ const steps = [
       "No technical knowledge or IT setup required",
       "Support available via call or chat throughout",
     ],
-    image: "/header4.png",
+    image: "/OPS_DASH_1.png",
   },
   {
     number: "02",

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, BadgeCheck, BriefcaseBusiness, CheckCircle2, ClipboardCheck, Clock3, FileCheck2, FolderOpen, MessageCircleQuestion, Quote, Route, ShieldCheck, TimerOff, UploadCloud, Users } from "lucide-react";
 import { ScrollAnimation } from "@/hooks/use-scroll-animation";
+import logoImage from "@/assets/indataflow-logo.png";
 
 const beforeIssues = [
   { icon: ClipboardCheck, label: "Cargo status tracked in spreadsheets shared via email" },
@@ -152,7 +153,7 @@ export default function CaseStudy() {
                 </blockquote>
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-16 h-16 rounded-full bg-[#0F1011] border border-white/08 flex items-center justify-center overflow-hidden">
-                    <img src="/galaxy-logistics-logo.png" alt="Galaxy Logistics" className="w-full h-full object-contain" />
+                    <img src={logoImage} alt="InDataFlow" className="w-full h-full object-contain" />
                   </div>
                   <div className="text-center">
                     <div className="font-bold text-white">Operations Director</div>
@@ -209,13 +210,13 @@ export default function CaseStudy() {
         <div className="container-wide">
           <div className="max-w-2xl mx-auto">
             <ScrollAnimation>
-              <Link to="/case-study" className="block bg-[#0F1011] border border-white/08 rounded-[16px] p-8 text-center hover:border-[#5E6AD2]/50 transition-colors">
-                <h3 className="text-xl font-bold text-white mb-3">Explore More Success Stories</h3>
+              <Link to="/contact" className="block bg-[#0F1011] border border-white/08 rounded-[16px] p-8 text-center hover:border-[#5E6AD2]/50 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3">See how this could work for you</h3>
                 <p className="text-white/50 mb-5">
-                  See how other logistics operators transformed their operations with InDataFlow.
+                  Book a walkthrough and see how InDataFlow would run inside your operation.
                 </p>
                 <span className="inline-flex items-center gap-2 text-[#5E6AD2] font-bold">
-                  View all case studies
+                  Book a walkthrough
                   <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>

@@ -51,7 +51,7 @@ export function MiniDemo() {
             <div className="mt-8 p-8 bg-[#0F1011] border border-white/08 rounded-[16px]">
               <div className="rounded-[12px] overflow-hidden">
                 <img
-                  src="/tt1.png"
+                  src="/internal_dashboard2.png"
                   alt="Upload document preview"
                   className="w-full h-full object-contain"
                 />

@@ -237,19 +237,19 @@ export function SolutionSection() {
 function ExpandedInternalMockup({ screenIndex }: { screenIndex: number }) {
   const screens = [
     <img key="viewdoc" src="/VIEWDOC.png" alt="Document review screen" className="w-full h-full object-cover" />,
-    <img key="update" src="/UPDATE.png" alt="Update screen" className="w-full h-full object-cover" />,
     <img key="timeline" src="/TIMELINE.png" alt="Timeline screen" className="w-full h-full object-cover" />,
-    <img key="audit" src="/AUDIT.png" alt="Audit log screen" className="w-full h-full object-cover" />,
+    <img key="dashboard" src="/internal_dashboard2.png" alt="Internal dashboard overview" className="w-full h-full object-cover" />,
+    <img key="ops" src="/OPS_DASH_1.png" alt="Operations dashboard" className="w-full h-full object-cover" />,
   ];
   return screens[screenIndex] || screens[0];
 }
 
 function ExpandedClientMockup({ screenIndex }: { screenIndex: number }) {
   const screens = [
-    <img key="c1" src="/C_1.png" alt="Client dashboard view 1" className="w-full h-full object-cover" />,
-    <img key="c2" src="/C_2.png" alt="Client dashboard view 2" className="w-full h-full object-cover" />,
-    <img key="c3" src="/C_3.png" alt="Client dashboard view 3" className="w-full h-full object-cover" />,
-    <img key="c4" src="/C_4.png" alt="Client dashboard view 4" className="w-full h-full object-cover" />,
+    <img key="c1" src="/CLIENT_IMG_1.png" alt="Client dashboard view 1" className="w-full h-full object-cover" />,
+    <img key="c2" src="/CLIENT_IMG_2.png" alt="Client dashboard view 2" className="w-full h-full object-cover" />,
+    <img key="c3" src="/VIEWDOC.png" alt="Client document view" className="w-full h-full object-cover" />,
+    <img key="c4" src="/TIMELINE.png" alt="Client timeline view" className="w-full h-full object-cover" />,
   ];
   return screens[screenIndex] || screens[0];
 }

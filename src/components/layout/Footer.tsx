@@ -49,10 +49,9 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: "About", href: "/about" },
-                { name: "Blog", href: "/blog" },
                 { name: "Contact", href: "/contact" },
-                { name: "Careers", href: "/careers" },
+                { name: "Case Study", href: "/case-study" },
+                { name: "Company Documents", href: "/company-documentation" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -134,13 +133,13 @@ export function Footer() {
             &copy; {currentYear} InDataFlow. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/privacy" className="text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]">
+            <Link to="/company-documentation/privacy-notice" className="text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]">
               Privacy
             </Link>
-            <Link to="/terms" className="text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]">
+            <Link to="/company-documentation/terms-of-service" className="text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]">
               Terms
             </Link>
-            <Link to="/cookies" className="text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]">
+            <Link to="/company-documentation/privacy-notice#cookies-and-website-technologies" className="text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]">
               Cookies
             </Link>
           </div>

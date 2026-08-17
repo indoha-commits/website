@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logoImage from "@/assets/indataflow-logo.png";
@@ -14,6 +14,24 @@ const navigation = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  // Lock body scroll while the mobile menu is open so the page behind does not
+  // move under the overlay. Restored when closed or on navigation.
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [mobileMenuOpen]);
+
+  // Close the menu after navigating so it never stays stuck on a route change.
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +72,7 @@ export function Header() {
 
         <button
           type="button"
-          className="lg:hidden p-2 -mr-2 text-white/50 hover:text-white transition-colors duration-200"
+          className="lg:hidden p-3 -mr-1 text-white/50 hover:text-white transition-colors duration-200"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-navigation"
@@ -71,7 +89,7 @@ export function Header() {
               <Link
                 key={item.name}
                 to={item.href}
-                className="block py-2 text-white/50 hover:text-white transition-colors"
+                className="block py-3 text-white/50 hover:text-white transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
