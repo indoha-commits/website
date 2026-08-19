@@ -9,6 +9,7 @@ export interface LeadPayload {
   country?: string;
   volume?: string;
   source_page?: string;
+  pricing_tier?: 'starter' | 'growth' | 'custom';
   utm_source?: string;
   utm_medium?: string;
   utm_campaign?: string;

@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ScrollAnimation } from "@/hooks/use-scroll-animation";
 import { submitLead, validateLead, type LeadPayload } from "@/lib/lead";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -36,6 +37,7 @@ export default function Contact() {
       email: new FormData(form).get("email")?.toString().trim() ?? "",
       phone: new FormData(form).get("phone")?.toString().trim() || undefined,
       volume: new FormData(form).get("volume")?.toString().trim() || undefined,
+      pricing_tier: (new FormData(form).get("pricing_tier")?.toString().trim() || undefined) as LeadPayload["pricing_tier"],
       message: new FormData(form).get("message")?.toString().trim() || undefined,
       source_page: window.location.pathname,
       ...utmParams(),
@@ -129,6 +131,24 @@ export default function Contact() {
                       <div className="space-y-2">
                         <Label htmlFor="country" className="text-white">Country</Label>
                         <Input id="country" name="country" placeholder="Where are you based?" required className="h-12 bg-[#010102] border-white/08 text-white" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="pricing_tier" className="text-white">Plan</Label>
+                        <select
+                          id="pricing_tier"
+                          name="pricing_tier"
+                          defaultValue="starter"
+                          className="h-12 w-full bg-[#010102] border border-white/08 text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-white/20 [&>option]:text-gray-900"
+                        >
+                          <option value="starter">Starter — $250/mo</option>
+                          <option value="growth">Growth — $500/mo</option>
+                          <option value="custom">Custom</option>
+                        </select>
+                        <p className="text-xs text-white/35">
+                          <Link to="/pricing" className="underline hover:text-white">
+                            See what's included in each plan
+                          </Link>
+                        </p>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="volume" className="text-white">Monthly cargo volume (optional)</Label>
