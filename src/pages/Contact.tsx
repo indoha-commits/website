@@ -138,7 +138,7 @@ export default function Contact() {
                           id="pricing_tier"
                           name="pricing_tier"
                           defaultValue="starter"
-                          className="h-12 w-full bg-[#010102] border border-white/08 text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-white/20 [&>option]:text-gray-900"
+                          className="h-12 w-full bg-[#010102] border border-white/08 text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-white/20 [&>option]:text-white [&>option]:bg-[#0F1011]"
                         >
                           <option value="starter">Starter — $250/mo</option>
                           <option value="growth">Growth — $500/mo</option>
