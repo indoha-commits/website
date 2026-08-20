@@ -310,7 +310,7 @@ export default function Product() {
         title="Your operation, finally under control."
         description="Your command center for daily operations. See what is happening, what needs attention, and what happens next without chasing updates across WhatsApp, email, and spreadsheets."
         tilt
-        imageSrc="/internal_dashboard2.png"
+        imageSrc="/indataflow_product_page_video_v2_longer_transitions.mp4"
         imageAlt="Internal operations dashboard showing cargo timeline, active shipments, and exception alerts"
       />
 
@@ -318,7 +318,7 @@ export default function Product() {
         eyebrow="AI connected"
         title="Information comes from everywhere. Control lives in one place."
         description="AI agents connect the messages, documents, and systems your operation already depends on, turning fragmented information into structured operational context."
-        imageSrc="/TIMELINE.png"
+        imageSrc="/indataflow_product_page_video_2_v2_richer.mp4"
         imageAlt="Operational timeline showing aggregated events from WhatsApp, email, documents, and connected systems into a single feed"
       />
 

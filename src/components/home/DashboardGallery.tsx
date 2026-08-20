@@ -27,7 +27,7 @@ export function DashboardGallery() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/14294690_3840_2160_24fps.mp4" type="video/mp4" />
+            <source src="/homepage_The_full_picture.mp4" type="video/mp4" />
           </video>
         </div>
       </motion.div>

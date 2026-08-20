@@ -17,6 +17,8 @@ export function BrowserMockup({ src, alt, tilt = false, className = "" }: Browse
   const rotateX = useTransform(y, [-0.5, 0.5], [3, -3]);
   const rotateY = useTransform(x, [-0.5, 0.5], [-3, 3]);
 
+  const isVideo = src.endsWith(".mp4");
+
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!tilt || !ref.current) return;
     const rect = ref.current.getBoundingClientRect();
@@ -49,15 +51,27 @@ export function BrowserMockup({ src, alt, tilt = false, className = "" }: Browse
         <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80" />
         <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80" />
       </div>
-      <motion.img
-        src={src}
-        alt={alt}
-        initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-        whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.3, delay: 0.08, ease: "easeOut" }}
-        className="w-full h-auto block relative z-[1] transition-transform duration-300 ease-out hover:scale-[1.01]"
-      />
+      {isVideo ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-auto block relative z-[1] transition-transform duration-300 ease-out hover:scale-[1.01]"
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      ) : (
+        <motion.img
+          src={src}
+          alt={alt}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.3, delay: 0.08, ease: "easeOut" }}
+          className="w-full h-auto block relative z-[1] transition-transform duration-300 ease-out hover:scale-[1.01]"
+        />
+      )}
     </motion.div>
   );
 }

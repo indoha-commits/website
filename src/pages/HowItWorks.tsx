@@ -16,7 +16,7 @@ const steps = [
       "No technical knowledge or IT setup required",
       "Support available via call or chat throughout",
     ],
-    image: "/OPS_DASH_1.png",
+    image: "/how_it_works_1.mp4",
   },
   {
     number: "02",
@@ -27,7 +27,7 @@ const steps = [
       "See real cargo examples mapped to your operation",
       "Provide feedback and adjustments before going live",
     ],
-    image: "/internal_dashboard2.png",
+    image: "/how_it_works_2.mp4",
   },
   {
     number: "03",
@@ -38,7 +38,7 @@ const steps = [
       "Import existing data and digital archive if needed",
       "Team training session included in every plan",
     ],
-    image: "/SECONDTRY.png",
+    image: "/how_it_works_final.mp4",
   },
   {
     number: "04",
@@ -49,7 +49,7 @@ const steps = [
       "Ongoing support and regular check-ins during first month",
       "Clients access their portal for real-time shipment updates",
     ],
-    image: "/TIMELINE.png",
+    image: "/homepage_The_full_picture.mp4",
   },
 ];
 
@@ -92,11 +92,23 @@ export default function HowItWorks() {
           <div className="grid md:grid-cols-5 gap-8 lg:gap-12">
             <div className="md:col-span-3 md:sticky md:top-32 md:self-start">
               <div className="rounded-[16px] overflow-hidden border border-white/08 transition-all duration-500">
-                <img
-                  src={steps[activeIndex].image}
-                  alt={steps[activeIndex].title}
-                  className="w-full"
-                />
+                {steps[activeIndex].image.endsWith(".mp4") ? (
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full"
+                  >
+                    <source src={steps[activeIndex].image} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img
+                    src={steps[activeIndex].image}
+                    alt={steps[activeIndex].title}
+                    className="w-full"
+                  />
+                )}
               </div>
             </div>
 

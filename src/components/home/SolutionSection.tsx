@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { ScrollAnimation } from "@/hooks/use-scroll-animation";
 import { X, ChevronLeft, ChevronRight, Archive, CheckCircle2, Clock3, Eye, FileCheck2, ShieldCheck, UserX, Waypoints } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -19,35 +18,65 @@ const clientFeatures = [
   { label: "Fewer calls, fewer disputes", icon: UserX },
 ];
 
-const cycleScreens = ["/internal_dashboard2.png", "/VIEWDOC.png", "/SECONDTRY.png"];
+const previewVideo = "/homepage_client_ops_preview.mp4";
 
 const internalScreens = [
-  { title: "Dashboard Overview", description: "Track all active shipments with real-time status updates" },
-  { title: "Document Management", description: "Upload, validate, and organize all cargo documentation" },
-  { title: "Milestone Tracking", description: "Monitor every step of the cargo lifecycle with timestamps" },
-  { title: "Activity Log", description: "Complete audit trail of all operations and changes" },
+  {
+    title: "Dashboard Overview",
+    description: "Track all active shipments with real-time status updates",
+    src: "/internal_dashboard2.png",
+    alt: "Internal dashboard overview",
+  },
+  {
+    title: "Document Management",
+    description: "Upload, validate, and organize all cargo documentation",
+    src: "/internal_cargo_registry.png",
+    alt: "Document review screen",
+  },
+  {
+    title: "Milestone Tracking",
+    description: "Monitor every step of the cargo lifecycle with timestamps",
+    src: "/internal_pending_documents.png",
+    alt: "Milestone tracking screen",
+  },
+  {
+    title: "Activity Log",
+    description: "Complete audit trail of all operations and changes",
+    src: "/internal_validation_request.png",
+    alt: "Operations dashboard",
+  },
 ];
 
 const clientScreens = [
-  { title: "Shipment Status", description: "Real-time visibility into your cargo's journey" },
-  { title: "Document Portal", description: "Securely upload and access all shipment documents" },
-  { title: "Timeline View", description: "Visual progress tracking from origin to destination" },
-  { title: "Notifications", description: "Stay updated with automatic status alerts" },
+  {
+    title: "Shipment Status",
+    description: "Real-time visibility into your cargo's journey",
+    src: "/client_operations_overview.png",
+    alt: "Client operations overview",
+  },
+  {
+    title: "Document Portal",
+    description: "Securely upload and access all shipment documents",
+    src: "/client_document_status.png",
+    alt: "Client document status",
+  },
+  {
+    title: "Timeline View",
+    description: "Visual progress tracking from origin to destination",
+    src: "/client_operations_overview.png",
+    alt: "Client operations overview",
+  },
+  {
+    title: "Notifications",
+    description: "Stay updated with automatic status alerts",
+    src: "/client_document_status.png",
+    alt: "Client document status",
+  },
 ];
 
 export function SolutionSection() {
   const [openModal, setOpenModal] = useState<"internal" | "client" | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [cycleIndex, setCycleIndex] = useState(0);
-  const [clientCycleIndex, setClientCycleIndex] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCycleIndex((prev) => (prev + 1) % cycleScreens.length);
-      setClientCycleIndex((prev) => (prev + 1) % cycleScreens.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   const currentScreens = openModal === "internal" ? internalScreens : clientScreens;
 
@@ -88,18 +117,15 @@ export function SolutionSection() {
               className="w-full rounded-[16px] overflow-hidden border border-white/08 mb-6 group cursor-pointer transition-all hover:border-[#5E6AD2]/50"
             >
               <div className="relative aspect-[16/10] bg-[#0A0A0B]">
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={cycleScreens[cycleIndex]}
-                    src={cycleScreens[cycleIndex]}
-                    alt="Internal operations dashboard preview"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                  />
-                </AnimatePresence>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                >
+                  <source src={previewVideo} type="video/mp4" />
+                </video>
               </div>
             </button>
             
@@ -127,18 +153,15 @@ export function SolutionSection() {
               className="w-full rounded-[16px] overflow-hidden border border-white/08 mb-6 group cursor-pointer transition-all hover:border-[#5E6AD2]/50"
             >
               <div className="relative aspect-[16/10] bg-[#0A0A0B]">
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={cycleScreens[clientCycleIndex]}
-                    src={cycleScreens[clientCycleIndex]}
-                    alt="Client dashboard preview"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                  />
-                </AnimatePresence>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                >
+                  <source src={previewVideo} type="video/mp4" />
+                </video>
               </div>
             </button>
             
@@ -235,21 +258,15 @@ export function SolutionSection() {
 }
 
 function ExpandedInternalMockup({ screenIndex }: { screenIndex: number }) {
-  const screens = [
-    <img key="viewdoc" src="/VIEWDOC.png" alt="Document review screen" className="w-full h-full object-cover" />,
-    <img key="timeline" src="/TIMELINE.png" alt="Timeline screen" className="w-full h-full object-cover" />,
-    <img key="dashboard" src="/internal_dashboard2.png" alt="Internal dashboard overview" className="w-full h-full object-cover" />,
-    <img key="ops" src="/OPS_DASH_1.png" alt="Operations dashboard" className="w-full h-full object-cover" />,
-  ];
+  const screens = internalScreens.map((screen) => (
+    <img key={screen.src} src={screen.src} alt={screen.alt} className="w-full h-full object-cover" />
+  ));
   return screens[screenIndex] || screens[0];
 }
 
 function ExpandedClientMockup({ screenIndex }: { screenIndex: number }) {
-  const screens = [
-    <img key="c1" src="/CLIENT_IMG_1.png" alt="Client dashboard view 1" className="w-full h-full object-cover" />,
-    <img key="c2" src="/CLIENT_IMG_2.png" alt="Client dashboard view 2" className="w-full h-full object-cover" />,
-    <img key="c3" src="/VIEWDOC.png" alt="Client document view" className="w-full h-full object-cover" />,
-    <img key="c4" src="/TIMELINE.png" alt="Client timeline view" className="w-full h-full object-cover" />,
-  ];
+  const screens = clientScreens.map((screen) => (
+    <img key={screen.src + screen.title} src={screen.src} alt={screen.alt} className="w-full h-full object-cover" />
+  ));
   return screens[screenIndex] || screens[0];
 }
