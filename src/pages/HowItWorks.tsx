@@ -28,7 +28,7 @@ const steps = [
       "See real cargo examples mapped to your operation",
       "Provide feedback and adjustments before going live",
     ],
-    image: "/how_it_works_2.mp4",
+    image: "/how_it_works_final.mp4",
   },
   {
     number: "03",
@@ -39,7 +39,7 @@ const steps = [
       "Import existing data and digital archive if needed",
       "Team training session included in every plan",
     ],
-    image: "/how_it_works_final.mp4",
+    image: "/how_it_works_2.mp4",
   },
   {
     number: "04",

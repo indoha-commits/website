@@ -18,7 +18,7 @@ const clientFeatures = [
   { label: "Fewer calls, fewer disputes", icon: UserX },
 ];
 
-const previewVideo = "/homepage_client_ops_preview.mp4";
+const previewVideo = "/homepage_client_ops_preview_hd.mp4";
 
 const internalScreens = [
   {
@@ -112,22 +112,10 @@ export function SolutionSection() {
           <ScrollAnimation className="flex flex-col h-full max-w-6xl mx-auto">
             <h3 className="text-xl font-bold text-white mb-6">Internal Operations Dashboard</h3>
             
-            <button
+            <PreviewVideoCard
+              label="Open internal operations preview"
               onClick={() => handleOpen("internal")}
-              className="w-full rounded-[20px] overflow-hidden border border-white/08 mb-8 group cursor-pointer transition-all hover:border-[#5E6AD2]/50"
-            >
-              <div className="relative aspect-[16/9] min-h-[320px] sm:min-h-[420px] lg:min-h-[500px] bg-[#0A0A0B]">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src={previewVideo} type="video/mp4" />
-                </video>
-              </div>
-            </button>
+            />
             
             <ul className="grid sm:grid-cols-2 gap-3 flex-grow">
               {internalFeatures.map((feature) => {
@@ -148,22 +136,10 @@ export function SolutionSection() {
           <ScrollAnimation delay={100} className="flex flex-col h-full max-w-6xl mx-auto">
             <h3 className="text-xl font-bold text-white mb-6">Client Dashboard</h3>
             
-            <button
+            <PreviewVideoCard
+              label="Open client dashboard preview"
               onClick={() => handleOpen("client")}
-              className="w-full rounded-[20px] overflow-hidden border border-white/08 mb-8 group cursor-pointer transition-all hover:border-[#5E6AD2]/50"
-            >
-              <div className="relative aspect-[16/9] min-h-[320px] sm:min-h-[420px] lg:min-h-[500px] bg-[#0A0A0B]">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src={previewVideo} type="video/mp4" />
-                </video>
-              </div>
-            </button>
+            />
             
             <ul className="grid sm:grid-cols-2 gap-3 flex-grow">
               {clientFeatures.map((feature) => {
@@ -254,6 +230,32 @@ export function SolutionSection() {
         </DialogContent>
       </Dialog>
     </section>
+  );
+}
+
+function PreviewVideoCard({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      onClick={onClick}
+      className="group relative mb-8 w-full overflow-hidden rounded-[18px] border border-white/[0.14] bg-[#050506] text-left shadow-[0_28px_90px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_34px_120px_rgba(47,71,190,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8EA0FF]/70"
+    >
+      <div className="relative aspect-[59/30] min-h-[320px] bg-[#050506] sm:min-h-[440px] lg:min-h-[560px]">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full scale-[1.012] object-cover object-center contrast-[1.08] saturate-[1.06] brightness-[1.03] [backface-visibility:hidden] [transform:translateZ(0)_scale(1.012)]"
+        >
+          <source src={previewVideo} type="video/mp4" />
+        </video>
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0)_18%,rgba(0,0,0,0)_70%,rgba(0,0,0,0.28))]" />
+        <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/[0.08]" />
+      </div>
+    </button>
   );
 }
 

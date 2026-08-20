@@ -7,29 +7,31 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import logoImage from "@/assets/indataflow-logo.png";
 
+const GENERIC_LOGIN_ERROR = "Unable to sign in right now. Please try again.";
+const GENERIC_SESSION_ERROR = "We couldn't start your dashboard session. Please try again.";
+const GENERIC_REDIRECT_ERROR = "We couldn't verify your dashboard destination. Please contact support.";
+
+function allowedDashboardOrigins() {
+  return [ENV.INTERNAL_DASHBOARD_URL, ENV.CLIENT_DASHBOARD_URL]
+    .filter(Boolean)
+    .map((value) => {
+      try {
+        return new URL(value).origin;
+      } catch {
+        return null;
+      }
+    })
+    .filter((value): value is string => Boolean(value));
+}
+
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('auth') === 'failed') {
-      return 'Login failed. Please fix the issue and try again.';
-    }
-    return null;
-  });
-  const [authBlocked, setAuthBlocked] = useState(() => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('auth') === 'failed';
-  });
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (authBlocked) {
-      setError('Login is locked after a previous failure. Reset the form to try again.');
-      return;
-    }
-
     setLoading(true);
     setError(null);
 
@@ -60,8 +62,8 @@ export default function Login() {
       }
 
       if (!meRes.ok) {
-        const txt = await meRes.text().catch(() => '');
-        throw new Error(`Role lookup failed: ${meRes.status} ${txt}`);
+        const detail = await meRes.text().catch(() => '');
+        throw new Error(`Role lookup failed: ${meRes.status} ${detail}`);
       }
 
       const me = (await meRes.json()) as { role: 'client' | 'ops' | 'admin' };
@@ -80,13 +82,12 @@ export default function Login() {
         });
 
         if (claimRes.status === 409) {
-          const txt = await claimRes.text().catch(() => '');
-          throw new Error(`Already signed in elsewhere. Please sign out from the other device or wait for the session to expire. (${txt})`);
+          throw new Error('Session conflict: already signed in elsewhere.');
         }
 
         if (!claimRes.ok) {
-          const txt = await claimRes.text().catch(() => '');
-          throw new Error(`Failed to start internal session: ${claimRes.status} ${txt}`);
+          const detail = await claimRes.text().catch(() => '');
+          throw new Error(`Failed to start internal session: ${claimRes.status} ${detail}`);
         }
       }
 
@@ -95,8 +96,8 @@ export default function Login() {
       });
 
       if (!resolveRes.ok) {
-        const txt = await resolveRes.text().catch(() => '');
-        throw new Error(`Tenant resolve failed: ${resolveRes.status} ${txt}`);
+        const detail = await resolveRes.text().catch(() => '');
+        throw new Error(`Tenant resolve failed: ${resolveRes.status} ${detail}`);
       }
 
       const resolve = (await resolveRes.json()) as { redirect_url?: string };
@@ -106,6 +107,10 @@ export default function Login() {
       }
 
       const target = new URL(redirectUrl);
+      const allowedOrigins = allowedDashboardOrigins();
+      if (!allowedOrigins.includes(target.origin)) {
+        throw new Error(`Untrusted redirect origin: ${target.origin}`);
+      }
       const basePath = target.pathname.replace(/\/+$/, '');
       target.pathname = `${basePath}/auth/callback`;
       target.hash = new URLSearchParams({
@@ -118,11 +123,17 @@ export default function Login() {
     } catch (err: any) {
       await supabase.auth.signOut();
       const message = String(err?.message ?? err);
-      setError(message);
-      setAuthBlocked(true);
-      const url = new URL(window.location.href);
-      url.searchParams.set('auth', 'failed');
-      window.history.replaceState({}, '', url.toString());
+      console.error('Login handoff failed:', message);
+
+      if (message.includes('Session conflict')) {
+        setError('You are already signed in elsewhere. Sign out from the other device or wait for the session to expire.');
+      } else if (message.includes('Untrusted redirect origin') || message.includes('redirect_url')) {
+        setError(GENERIC_REDIRECT_ERROR);
+      } else if (message.includes('internal session') || message.includes('Tenant resolve')) {
+        setError(GENERIC_SESSION_ERROR);
+      } else {
+        setError(GENERIC_LOGIN_ERROR);
+      }
     } finally {
       setLoading(false);
     }
@@ -134,10 +145,6 @@ export default function Login() {
     setPassword('');
     setLoading(false);
     setError(null);
-    setAuthBlocked(false);
-    const url = new URL(window.location.href);
-    url.searchParams.delete('auth');
-    window.history.replaceState({}, '', url.toString());
   };
 
   return (
