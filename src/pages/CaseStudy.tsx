@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, BadgeCheck, BriefcaseBusiness, CheckCircle2, ClipboardCheck, Clock3, FileCheck2, FolderOpen, MessageCircleQuestion, Quote, Route, ShieldCheck, TimerOff, UploadCloud, Users } from "lucide-react";
 import { ScrollAnimation } from "@/hooks/use-scroll-animation";
-import logoImage from "@/assets/indataflow-logo.png";
 
 const beforeIssues = [
   { icon: ClipboardCheck, label: "Cargo status tracked in spreadsheets shared via email" },
@@ -35,9 +34,6 @@ export default function CaseStudy() {
         <div className="container-wide">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollAnimation>
-              <div className="inline-flex items-center gap-2 text-[#5E6AD2] text-sm font-medium px-4 py-2 rounded-full border border-[#5E6AD2]/35 bg-[#5E6AD2]/10 mb-6">
-                Case Study
-              </div>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={100}>
               <h1 className="text-4xl md:text-5xl leading-[1.2] font-serif font-bold text-white tracking-[-0.03em] mb-6">
@@ -153,7 +149,7 @@ export default function CaseStudy() {
                 </blockquote>
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-16 h-16 rounded-full bg-[#0F1011] border border-white/08 flex items-center justify-center overflow-hidden">
-                    <img src={logoImage} alt="InDataFlow" className="w-full h-full object-contain" />
+                    <img src="/galaxy-logistics-logo.png" alt="Galaxy Logistics" className="w-full h-full object-contain" />
                   </div>
                   <div className="text-center">
                     <div className="font-bold text-white">Operations Director</div>
