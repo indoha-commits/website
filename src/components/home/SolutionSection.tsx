@@ -107,16 +107,16 @@ export function SolutionSection() {
           </div>
         </ScrollAnimation>
 
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
+        <div className="space-y-12 sm:space-y-14 lg:space-y-16">
           {/* Internal Operations */}
-          <ScrollAnimation className="flex flex-col h-full">
+          <ScrollAnimation className="flex flex-col h-full max-w-6xl mx-auto">
             <h3 className="text-xl font-bold text-white mb-6">Internal Operations Dashboard</h3>
             
             <button
               onClick={() => handleOpen("internal")}
-              className="w-full rounded-[16px] overflow-hidden border border-white/08 mb-6 group cursor-pointer transition-all hover:border-[#5E6AD2]/50"
+              className="w-full rounded-[20px] overflow-hidden border border-white/08 mb-8 group cursor-pointer transition-all hover:border-[#5E6AD2]/50"
             >
-              <div className="relative aspect-[16/10] bg-[#0A0A0B]">
+              <div className="relative aspect-[16/9] min-h-[320px] sm:min-h-[420px] lg:min-h-[500px] bg-[#0A0A0B]">
                 <video
                   autoPlay
                   muted
@@ -145,14 +145,14 @@ export function SolutionSection() {
           </ScrollAnimation>
 
           {/* Client Dashboard */}
-          <ScrollAnimation delay={100} className="flex flex-col h-full">
+          <ScrollAnimation delay={100} className="flex flex-col h-full max-w-6xl mx-auto">
             <h3 className="text-xl font-bold text-white mb-6">Client Dashboard</h3>
             
             <button
               onClick={() => handleOpen("client")}
-              className="w-full rounded-[16px] overflow-hidden border border-white/08 mb-6 group cursor-pointer transition-all hover:border-[#5E6AD2]/50"
+              className="w-full rounded-[20px] overflow-hidden border border-white/08 mb-8 group cursor-pointer transition-all hover:border-[#5E6AD2]/50"
             >
-              <div className="relative aspect-[16/10] bg-[#0A0A0B]">
+              <div className="relative aspect-[16/9] min-h-[320px] sm:min-h-[420px] lg:min-h-[500px] bg-[#0A0A0B]">
                 <video
                   autoPlay
                   muted

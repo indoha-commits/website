@@ -12,7 +12,7 @@ export function HeroSection() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/homepage_The_full_picture.mp4" type="video/mp4" />
+          <source src="/14294690_3840_2160_24fps.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#010102]/10 via-[#010102]/20 to-[#010102]/40" />

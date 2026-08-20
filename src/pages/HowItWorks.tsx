@@ -4,7 +4,8 @@ import { PageHeader } from "@/components/ui/page-header";
 import { ScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useRef, useState } from "react";
 
 const steps = [
   {
@@ -55,30 +56,16 @@ const steps = [
 
 export default function HowItWorks() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const sentinelRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
 
-  useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-
-    steps.forEach((_, i) => {
-      const el = sentinelRefs.current[i];
-      if (!el) return;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveIndex(i);
-          }
-        },
-        { threshold: 0.4 }
-      );
-
-      observer.observe(el);
-      observers.push(observer);
-    });
-
-    return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const nextIndex = Math.min(steps.length - 1, Math.max(0, Math.floor(latest * steps.length)));
+    setActiveIndex((current) => (current === nextIndex ? current : nextIndex));
+  });
 
   return (
     <Layout>
@@ -87,62 +74,79 @@ export default function HowItWorks() {
         description="No heavy IT. No months of implementation. InDataFlow is designed for fast onboarding and immediate daily usage."
       />
 
-      <section className="section-padding bg-[#010102]">
-        <div className="container-wide">
-          <div className="grid md:grid-cols-5 gap-8 lg:gap-12">
-            <div className="md:col-span-3 md:sticky md:top-32 md:self-start">
-              <div className="rounded-[16px] overflow-hidden border border-white/08 transition-all duration-500">
-                {steps[activeIndex].image.endsWith(".mp4") ? (
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full"
-                  >
-                    <source src={steps[activeIndex].image} type="video/mp4" />
-                  </video>
-                ) : (
-                  <img
-                    src={steps[activeIndex].image}
-                    alt={steps[activeIndex].title}
-                    className="w-full"
-                  />
-                )}
+      <div ref={sectionRef}>
+        <section className="section-padding bg-[#010102]">
+          <div className="container-wide">
+            <div className="grid md:grid-cols-5 gap-8 lg:gap-12">
+              <div className="md:col-span-3 md:sticky md:top-32 md:self-start">
+                <div className="rounded-[20px] overflow-hidden border border-white/08 bg-[#0A0A0B] shadow-[0_0_40px_rgba(0,0,0,0.35)] aspect-[16/9] lg:aspect-[16/8]">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeIndex}
+                      initial={{ opacity: 0, scale: 0.985 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.32, ease: "easeOut" }}
+                      className="w-full h-full"
+                    >
+                      {steps[activeIndex].image.endsWith(".mp4") ? (
+                        <video
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                          className="w-full h-full object-cover block"
+                        >
+                          <source src={steps[activeIndex].image} type="video/mp4" />
+                        </video>
+                      ) : (
+                        <img
+                          src={steps[activeIndex].image}
+                          alt={steps[activeIndex].title}
+                          className="w-full h-full object-cover block"
+                        />
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
+
+              <div className="md:col-span-2 flex flex-col">
+                {steps.map((step, i) => {
+                  const isActive = i === activeIndex;
+
+                  return (
+                    <div
+                      key={step.number}
+                      className={"min-h-[60vh] flex flex-col justify-center py-12 transition-all duration-300 " + (isActive ? "opacity-100" : "opacity-65")}
+                    >
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className={"w-10 h-10 rounded-[10px] flex items-center justify-center border transition-colors " + (isActive ? "border-[#5E6AD2] bg-[#5E6AD2]/10" : "border-white/15 bg-white/[0.03]") }>
+                          <span className="text-[#5E6AD2] font-mono font-bold text-sm">{step.number}</span>
+                        </div>
+                        <span className="text-xs text-[#5E6AD2] uppercase tracking-[0.15em] font-mono">
+                          Step {step.number}
+                        </span>
+                      </div>
+                      <h2 className="text-4xl font-serif font-bold text-white mb-4">{step.title}</h2>
+                      <p className="text-lg text-white/70 mb-6">{step.description}</p>
+                      <ul className="space-y-3">
+                        {step.bullets.map((bullet) => (
+                          <li key={bullet} className="flex items-start gap-3">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#5E6AD2] mt-2 shrink-0" />
+                            <span className="text-base text-white/70">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-
-            <div className="md:col-span-2 flex flex-col">
-              {steps.map((step, i) => (
-                <div
-                  key={step.number}
-                  ref={(el) => { sentinelRefs.current[i] = el; }}
-                  className="min-h-[60vh] flex flex-col justify-center py-12"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-[10px] flex items-center justify-center border border-[#5E6AD2]">
-                      <span className="text-[#5E6AD2] font-mono font-bold text-sm">{step.number}</span>
-                    </div>
-                    <span className="text-xs text-[#5E6AD2] uppercase tracking-[0.15em] font-mono">
-                      Step {step.number}
-                    </span>
-                  </div>
-                  <h2 className="text-4xl font-serif font-bold text-white mb-4">{step.title}</h2>
-                  <p className="text-lg text-white/70 mb-6">{step.description}</p>
-                  <ul className="space-y-3">
-                    {step.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-start gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#5E6AD2] mt-2 shrink-0" />
-                        <span className="text-base text-white/70">{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section className="section-padding bg-[#010102]">
         <div className="container-wide">
