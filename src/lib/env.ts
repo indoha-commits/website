@@ -13,6 +13,9 @@ export const ENV = {
   MT_TENANT_SUBDOMAIN: (import.meta.env.VITE_MT_TENANT_SUBDOMAIN || '') as string,
   INTERNAL_DASHBOARD_URL: (import.meta.env.VITE_INTERNAL_DASHBOARD_URL || '') as string,
   CLIENT_DASHBOARD_URL: (import.meta.env.VITE_CLIENT_DASHBOARD_URL || '') as string,
+  BILLING_HUB_URL: (import.meta.env.VITE_BILLING_HUB_URL || '') as string,
+  CONTROL_HUB_URL: (import.meta.env.VITE_CONTROL_HUB_URL || '') as string,
+  MANAGER_DASHBOARD_URL: (import.meta.env.VITE_MANAGER_DASHBOARD_URL || '') as string,
   SUPABASE_URL: (import.meta.env.VITE_SUPABASE_URL || '') as string,
   SUPABASE_ANON_KEY: (import.meta.env.VITE_SUPABASE_ANON_KEY || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || '') as string,
 };

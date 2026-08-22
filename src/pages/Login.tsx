@@ -11,8 +11,23 @@ const GENERIC_LOGIN_ERROR = "Unable to sign in right now. Please try again.";
 const GENERIC_SESSION_ERROR = "We couldn't start your dashboard session. Please try again.";
 const GENERIC_REDIRECT_ERROR = "We couldn't verify your dashboard destination. Please contact support.";
 
+const DEFAULT_TRUSTED_DASHBOARD_URLS = [
+  'https://client.indataflow.com',
+  'https://internal.indataflow.com',
+  'https://control.indataflow.com',
+  'https://billing.indataflow.com',
+  'https://manager.indataflow.com',
+];
+
 function allowedDashboardOrigins() {
-  return [ENV.INTERNAL_DASHBOARD_URL, ENV.CLIENT_DASHBOARD_URL]
+  return [
+    ENV.INTERNAL_DASHBOARD_URL,
+    ENV.CLIENT_DASHBOARD_URL,
+    ENV.BILLING_HUB_URL,
+    ENV.CONTROL_HUB_URL,
+    ENV.MANAGER_DASHBOARD_URL,
+    ...DEFAULT_TRUSTED_DASHBOARD_URLS,
+  ]
     .filter(Boolean)
     .map((value) => {
       try {
