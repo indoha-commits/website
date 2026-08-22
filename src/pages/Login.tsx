@@ -19,6 +19,17 @@ const DEFAULT_TRUSTED_DASHBOARD_URLS = [
   'https://manager.indataflow.com',
 ];
 
+const INTERNAL_SESSION_STORAGE_KEY = 'internal_session_id';
+
+function getOrCreateInternalSessionId() {
+  if (typeof window === 'undefined') return crypto.randomUUID();
+  const existing = window.sessionStorage.getItem(INTERNAL_SESSION_STORAGE_KEY);
+  if (existing) return existing;
+  const sessionId = crypto.randomUUID();
+  window.sessionStorage.setItem(INTERNAL_SESSION_STORAGE_KEY, sessionId);
+  return sessionId;
+}
+
 function allowedDashboardOrigins() {
   return [
     ENV.INTERNAL_DASHBOARD_URL,
@@ -85,7 +96,7 @@ export default function Login() {
 
       let internalSessionId: string | null = null;
       if (me.role === 'ops' || me.role === 'admin') {
-        internalSessionId = crypto.randomUUID();
+        internalSessionId = getOrCreateInternalSessionId();
         const claimRes = await fetch(`${ENV.API_BASE_URL}/ops/internal-session/claim`, {
           method: 'POST',
           headers: {
