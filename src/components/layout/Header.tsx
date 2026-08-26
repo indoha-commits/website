@@ -6,7 +6,6 @@ import logoImage from "@/assets/indataflow-logo.png";
 
 const navigation = [
   { name: "Product", href: "/product" },
-  { name: "How It Works", href: "/how-it-works" },
   { name: "Pricing", href: "/pricing" },
   { name: "Case Study", href: "/case-study" },
 ];
@@ -16,8 +15,6 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Lock body scroll while the mobile menu is open so the page behind does not
-  // move under the overlay. Restored when closed or on navigation.
   useEffect(() => {
     if (mobileMenuOpen) {
       const originalOverflow = document.body.style.overflow;
@@ -28,7 +25,6 @@ export function Header() {
     }
   }, [mobileMenuOpen]);
 
-  // Close the menu after navigating so it never stays stuck on a route change.
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
@@ -66,7 +62,7 @@ export function Header() {
             <Link to="/login">Log in</Link>
           </Button>
           <Button asChild>
-            <Link to="/contact">Get started</Link>
+            <Link to="/contact">Book a walkthrough</Link>
           </Button>
         </div>
 
@@ -100,7 +96,7 @@ export function Header() {
                 <Link to="/login" onClick={() => setMobileMenuOpen(false)}>Log in</Link>
               </Button>
               <Button asChild className="w-full">
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Get started</Link>
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Book a walkthrough</Link>
               </Button>
             </div>
           </div>

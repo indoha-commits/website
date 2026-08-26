@@ -27,6 +27,34 @@ const afterOutcomes = [
   { icon: Route, label: "Transparent audit trail reduces disputes to near zero" },
 ];
 
+const supportingDocumentation = [
+  {
+    title: "Freight forwarder workflow",
+    description: "How forwarding teams keep documents, milestones and client updates tied to one shipment record.",
+    href: "/solutions/freight-forwarders",
+  },
+  {
+    title: "Clearing agent workflow",
+    description: "How customs-facing teams keep approvals, handoffs and shipment context traceable.",
+    href: "/solutions/clearing-agents",
+  },
+  {
+    title: "Bill of lading validation",
+    description: "How a bill of lading is checked against invoice and packing list before status is shared.",
+    href: "/resources/bill-of-lading-workflow",
+  },
+  {
+    title: "Commercial invoice workflow",
+    description: "How invoice data is matched back to the shipment record across operations.",
+    href: "/resources/commercial-invoice-workflow",
+  },
+  {
+    title: "Packing list workflow",
+    description: "How packing-list details support cargo validation and client visibility.",
+    href: "/resources/packing-list-workflow",
+  },
+];
+
 export default function CaseStudy() {
   return (
     <Layout>
@@ -217,6 +245,40 @@ export default function CaseStudy() {
                 </span>
               </Link>
             </ScrollAnimation>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding pt-0 bg-[#010102]">
+        <div className="container-wide">
+          <div className="max-w-5xl mx-auto">
+            <ScrollAnimation>
+              <div className="text-center mb-10">
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4 tracking-[-0.02em]">
+                  Supporting documentation
+                </h2>
+                <p className="text-lg text-white/70 max-w-2xl mx-auto">
+                  Operational notes and workflow documentation that explain how InDataFlow structures shipment records, document validation and cargo visibility.
+                </p>
+              </div>
+            </ScrollAnimation>
+            <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+              {supportingDocumentation.map((item, index) => (
+                <ScrollAnimation key={item.href} animation="fade-up" delay={index * 80}>
+                  <Link
+                    to={item.href}
+                    className="block rounded-[16px] border border-white/08 bg-[#0F1011] p-6 hover:border-[#5E6AD2]/35 hover:-translate-y-0.5 transition-all duration-300 h-full"
+                  >
+                    <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                    <p className="text-white/62 leading-relaxed mb-5">{item.description}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-[#5E6AD2]">
+                      Read documentation
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </ScrollAnimation>
+              ))}
+            </div>
           </div>
         </div>
       </section>
