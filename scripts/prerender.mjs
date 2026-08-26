@@ -4,8 +4,8 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
-const clientDir = path.join(rootDir, "dist", "client");
-const serverEntry = pathToFileURL(path.join(rootDir, "dist", "server", "entry-server.js")).href;
+const clientDir = path.join(rootDir, "dist");
+const serverEntry = pathToFileURL(path.join(rootDir, ".ssr", "entry-server.js")).href;
 const { render, prerenderRoutes, sitemapRoutes } = await import(serverEntry);
 const template = await readFile(path.join(clientDir, "index.html"), "utf8");
 
