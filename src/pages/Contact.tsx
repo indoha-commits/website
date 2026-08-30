@@ -145,7 +145,7 @@ export default function Contact() {
                           <option value="custom">Custom</option>
                         </select>
                         <p className="text-xs text-white/35">
-                          <Link to="/pricing" className="underline hover:text-white">
+                          <Link to="/pricing/" className="underline hover:text-white">
                             See what's included in each plan
                           </Link>
                         </p>

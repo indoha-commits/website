@@ -293,9 +293,9 @@ const Button = React.forwardRef(
 Button.displayName = "Button";
 const logoImage = "/assets/indataflow-logo-DWwf7N9f.png";
 const navigation = [
-  { name: "Product", href: "/product" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Case Study", href: "/case-study" }
+  { name: "Product", href: "/product/" },
+  { name: "Pricing", href: "/pricing/" },
+  { name: "Case Study", href: "/case-study/" }
 ];
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -335,7 +335,7 @@ function Header() {
       )) }),
       /* @__PURE__ */ jsxs("div", { className: "hidden lg:flex items-center gap-3", children: [
         /* @__PURE__ */ jsx(Button, { asChild: true, variant: "ghost", children: /* @__PURE__ */ jsx(Link, { to: "/login", children: "Log in" }) }),
-        /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/contact", children: "Book a walkthrough" }) })
+        /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/contact/", children: "Book a walkthrough" }) })
       ] }),
       /* @__PURE__ */ jsx(
         "button",
@@ -363,7 +363,7 @@ function Header() {
       )),
       /* @__PURE__ */ jsxs("div", { className: "pt-4 flex flex-col gap-2", children: [
         /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", className: "w-full", children: /* @__PURE__ */ jsx(Link, { to: "/login", onClick: () => setMobileMenuOpen(false), children: "Log in" }) }),
-        /* @__PURE__ */ jsx(Button, { asChild: true, className: "w-full", children: /* @__PURE__ */ jsx(Link, { to: "/contact", onClick: () => setMobileMenuOpen(false), children: "Book a walkthrough" }) })
+        /* @__PURE__ */ jsx(Button, { asChild: true, className: "w-full", children: /* @__PURE__ */ jsx(Link, { to: "/contact/", onClick: () => setMobileMenuOpen(false), children: "Book a walkthrough" }) })
       ] })
     ] }) })
   ] });
@@ -380,28 +380,28 @@ function Footer() {
       /* @__PURE__ */ jsxs("div", { children: [
         /* @__PURE__ */ jsx("h4", { className: "text-xs text-white/30 uppercase tracking-[0.15em] font-mono mb-5 leading-[1.4]", children: "Product" }),
         /* @__PURE__ */ jsx("ul", { className: "space-y-3", children: [
-          { name: "Product", href: "/product" },
-          { name: "How It Works", href: "/how-it-works" },
-          { name: "Pricing", href: "/pricing" },
-          { name: "Case Study", href: "/case-study" }
+          { name: "Product", href: "/product/" },
+          { name: "How It Works", href: "/how-it-works/" },
+          { name: "Pricing", href: "/pricing/" },
+          { name: "Case Study", href: "/case-study/" }
         ].map((link) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: link.href, className: "text-base text-white/58 hover:text-white transition-colors leading-[1.55]", children: link.name }) }, link.href)) })
       ] }),
       /* @__PURE__ */ jsxs("div", { children: [
         /* @__PURE__ */ jsx("h4", { className: "text-xs text-white/30 uppercase tracking-[0.15em] font-mono mb-5 leading-[1.4]", children: "Solutions" }),
         /* @__PURE__ */ jsx("ul", { className: "space-y-3", children: [
-          { name: "Freight Forwarders", href: "/solutions/freight-forwarders" },
-          { name: "Clearing Agents", href: "/solutions/clearing-agents" },
-          { name: "Resources", href: "/resources" },
-          { name: "Contact", href: "/contact" }
+          { name: "Freight Forwarders", href: "/solutions/freight-forwarders/" },
+          { name: "Clearing Agents", href: "/solutions/clearing-agents/" },
+          { name: "Resources", href: "/resources/" },
+          { name: "Contact", href: "/contact/" }
         ].map((link) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: link.href, className: "text-base text-white/58 hover:text-white transition-colors leading-[1.55]", children: link.name }) }, link.href)) })
       ] }),
       /* @__PURE__ */ jsxs("div", { children: [
         /* @__PURE__ */ jsx("h4", { className: "text-xs text-white/30 uppercase tracking-[0.15em] font-mono mb-5 leading-[1.4]", children: "Resources" }),
         /* @__PURE__ */ jsx("ul", { className: "space-y-3 mb-8", children: [
-          { name: "Bill of Lading Workflow", href: "/resources/bill-of-lading-workflow" },
-          { name: "Commercial Invoice Workflow", href: "/resources/commercial-invoice-workflow" },
-          { name: "Packing List Workflow", href: "/resources/packing-list-workflow" },
-          { name: "Company Documents", href: "/company-documentation" }
+          { name: "Bill of Lading Workflow", href: "/resources/bill-of-lading-workflow/" },
+          { name: "Commercial Invoice Workflow", href: "/resources/commercial-invoice-workflow/" },
+          { name: "Packing List Workflow", href: "/resources/packing-list-workflow/" },
+          { name: "Company Documents", href: "/company-documentation/" }
         ].map((link) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: link.href, className: "text-base text-white/58 hover:text-white transition-colors leading-[1.55]", children: link.name }) }, link.href)) }),
         /* @__PURE__ */ jsx("h4", { className: "text-xs text-white/30 uppercase tracking-[0.15em] font-mono mb-3 leading-[1.4]", children: "Contact" }),
         /* @__PURE__ */ jsx("a", { href: "mailto:hello@indataflow.com", className: "text-base text-white/58 hover:text-white transition-colors leading-[1.55]", children: "hello@indataflow.com" })
@@ -414,9 +414,9 @@ function Footer() {
         " InDataFlow. All rights reserved."
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-6", children: [
-        /* @__PURE__ */ jsx(Link, { to: "/company-documentation/privacy-notice", className: "text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]", children: "Privacy" }),
-        /* @__PURE__ */ jsx(Link, { to: "/company-documentation/terms-of-service", className: "text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]", children: "Terms" }),
-        /* @__PURE__ */ jsx(Link, { to: "/company-documentation/security", className: "text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]", children: "Security" })
+        /* @__PURE__ */ jsx(Link, { to: "/company-documentation/privacy-notice/", className: "text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]", children: "Privacy" }),
+        /* @__PURE__ */ jsx(Link, { to: "/company-documentation/terms-of-service/", className: "text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]", children: "Terms" }),
+        /* @__PURE__ */ jsx(Link, { to: "/company-documentation/security/", className: "text-sm text-white/35 hover:text-white/65 transition-colors font-mono leading-[1.5]", children: "Security" })
       ] })
     ] })
   ] }) });
@@ -441,8 +441,8 @@ function HeroSection() {
       /* @__PURE__ */ jsx("p", { className: "text-lg sm:text-xl leading-[1.6] text-white/70 max-w-3xl mx-auto mb-4", children: "InDataFlow is a cargo operations platform that connects shipment documents, validation, events, approvals and client updates into one traceable shipment record." }),
       /* @__PURE__ */ jsx("p", { className: "text-base sm:text-lg leading-[1.6] text-white/55 max-w-3xl mx-auto mb-8", children: "Built for freight forwarders, clearing agents and logistics teams operating across East Africa." }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [
-        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "hero", className: "animate-cta-glow", children: /* @__PURE__ */ jsx(Link, { to: "/contact", children: "Book a walkthrough" }) }),
-        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsx(Link, { to: "/resources", children: "Read workflow resources" }) })
+        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "hero", className: "animate-cta-glow", children: /* @__PURE__ */ jsx(Link, { to: "/contact/", children: "Book a walkthrough" }) }),
+        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsx(Link, { to: "/resources/", children: "Read workflow resources" }) })
       ] })
     ] }),
     /* @__PURE__ */ jsx("div", { className: "absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#010102] to-transparent pointer-events-none z-10" })
@@ -890,12 +890,12 @@ function CTASection() {
     /* @__PURE__ */ jsx("h2", { className: "text-3xl sm:text-4xl font-serif font-bold text-white mb-4 tracking-[-0.02em]", children: "One shipment record from document intake to verified cargo status." }),
     /* @__PURE__ */ jsx("p", { className: "text-lg text-white/80 leading-relaxed mb-8", children: "Explore the product, solution pages and workflow guides that show how InDataFlow connects cargo operations, document validation and client visibility." }),
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row justify-center gap-3", children: [
-      /* @__PURE__ */ jsx(Link, { to: "/contact", children: /* @__PURE__ */ jsxs(Button, { className: "bg-[#5E6AD2] h-[44px] rounded-[10px] px-8 text-white hover:bg-[#5E6AD2]/90 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 group shadow-lg shadow-[#5E6AD2]/0 hover:shadow-[#5E6AD2]/20", children: [
+      /* @__PURE__ */ jsx(Link, { to: "/contact/", children: /* @__PURE__ */ jsxs(Button, { className: "bg-[#5E6AD2] h-[44px] rounded-[10px] px-8 text-white hover:bg-[#5E6AD2]/90 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 group shadow-lg shadow-[#5E6AD2]/0 hover:shadow-[#5E6AD2]/20", children: [
         "Book a walkthrough",
         /* @__PURE__ */ jsx(ArrowRight, { className: "w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" })
       ] }) }),
-      /* @__PURE__ */ jsx(Link, { to: "/solutions/freight-forwarders", children: /* @__PURE__ */ jsx(Button, { variant: "outline", className: "h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2", children: "View solutions" }) }),
-      /* @__PURE__ */ jsx(Link, { to: "/resources", children: /* @__PURE__ */ jsx(Button, { variant: "outline", className: "h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2", children: "Read resources" }) })
+      /* @__PURE__ */ jsx(Link, { to: "/solutions/freight-forwarders/", children: /* @__PURE__ */ jsx(Button, { variant: "outline", className: "h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2", children: "View solutions" }) }),
+      /* @__PURE__ */ jsx(Link, { to: "/resources/", children: /* @__PURE__ */ jsx(Button, { variant: "outline", className: "h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2", children: "Read resources" }) })
     ] })
   ] }) }) }) });
 }
@@ -1237,7 +1237,7 @@ function Product() {
           title: "The control layer for modern logistics operations.",
           description: "Connect your messages, documents, and operational systems. InDataFlow gives your team one live view of what is happening and what needs to happen next.",
           className: "bg-transparent relative z-10 w-full py-24 sm:py-28 md:py-32 lg:py-36 [&_h1]:mb-7 [&_p]:max-w-4xl [&_p]:text-white/75 [&_p]:leading-[1.7] [&_.mt-8]:mt-10",
-          children: /* @__PURE__ */ jsx(Button, { asChild: true, className: "w-full sm:w-auto", children: /* @__PURE__ */ jsx(Link, { to: "/contact", children: "Book a walkthrough" }) })
+          children: /* @__PURE__ */ jsx(Button, { asChild: true, className: "w-full sm:w-auto", children: /* @__PURE__ */ jsx(Link, { to: "/contact/", children: "Book a walkthrough" }) })
         }
       ),
       /* @__PURE__ */ jsx("div", { className: "absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#010102] to-transparent pointer-events-none z-10" })
@@ -1267,7 +1267,7 @@ function Product() {
     /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsxs("div", { className: "container-wide text-center", children: [
       /* @__PURE__ */ jsx("h2", { className: "text-2xl leading-[1.2] sm:text-3xl font-serif font-bold text-white mb-5 tracking-[-0.02em]", children: "Ready to see InDataFlow in action?" }),
       /* @__PURE__ */ jsx("p", { className: "text-[17px] sm:text-lg leading-[1.7] text-white/70 mb-8", children: "Book a walkthrough and see how it fits your operation." }),
-      /* @__PURE__ */ jsx(Button, { asChild: true, className: "inline-flex w-full sm:w-auto items-center gap-2", children: /* @__PURE__ */ jsxs(Link, { to: "/contact", children: [
+      /* @__PURE__ */ jsx(Button, { asChild: true, className: "inline-flex w-full sm:w-auto items-center gap-2", children: /* @__PURE__ */ jsxs(Link, { to: "/contact/", children: [
         "Book a walkthrough",
         /* @__PURE__ */ jsx(ArrowRight, { className: "w-4 h-4" })
       ] }) })
@@ -1411,7 +1411,7 @@ function HowItWorks() {
     /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsxs("div", { className: "container-wide text-center", children: [
       /* @__PURE__ */ jsx("h2", { className: "text-3xl sm:text-4xl font-serif font-bold text-white mb-4 tracking-[-0.02em]", children: "Ready to get started?" }),
       /* @__PURE__ */ jsx("p", { className: "text-lg text-white/70 mb-8", children: "Book a call and we'll walk you through the entire process." }),
-      /* @__PURE__ */ jsx(Button, { asChild: true, className: "inline-flex items-center gap-2", children: /* @__PURE__ */ jsxs(Link, { to: "/contact", children: [
+      /* @__PURE__ */ jsx(Button, { asChild: true, className: "inline-flex items-center gap-2", children: /* @__PURE__ */ jsxs(Link, { to: "/contact/", children: [
         "Book a walkthrough",
         /* @__PURE__ */ jsx(ArrowRight, { className: "w-4 h-4" })
       ] }) })
@@ -1567,7 +1567,7 @@ function Pricing() {
                 {
                   asChild: true,
                   className: `w-full h-[44px] rounded-[10px] text-base font-medium transition-all duration-300 ${plan.highlighted ? "bg-[#5E6AD2] text-white hover:-translate-y-0.5 hover:shadow-md hover:shadow-[#5E6AD2]/10" : "bg-transparent border border-white/10 text-white/60 hover:text-white hover:border-white/30 hover:-translate-y-0.5"}`,
-                  children: /* @__PURE__ */ jsx(Link, { to: "/contact", children: plan.priceUSD ? "Subscribe" : "Contact us" })
+                  children: /* @__PURE__ */ jsx(Link, { to: "/contact/", children: plan.priceUSD ? "Subscribe" : "Contact us" })
                 }
               ) })
             ]
@@ -1659,7 +1659,7 @@ function Pricing() {
           {
             asChild: true,
             className: "inline-flex items-center gap-3 h-[48px] px-6 bg-[#5E6AD2] rounded-[10px] text-base font-medium text-white hover:-translate-y-0.5 hover:shadow-md hover:shadow-[#5E6AD2]/10 transition-all duration-300",
-            children: /* @__PURE__ */ jsxs(Link, { to: "/contact", children: [
+            children: /* @__PURE__ */ jsxs(Link, { to: "/contact/", children: [
               /* @__PURE__ */ jsx(Calendar, { className: "w-4 h-4" }),
               "Talk to our team",
               /* @__PURE__ */ jsx(ArrowRight, { className: "w-4 h-4" })
@@ -1743,7 +1743,7 @@ function Pricing() {
         {
           asChild: true,
           className: "inline-flex items-center gap-2 h-[40px] px-4 bg-[#5E6AD2] rounded-[10px] text-base font-medium text-white hover:bg-[#5E6AD2]/90 transition-all",
-          children: /* @__PURE__ */ jsxs(Link, { to: "/contact", children: [
+          children: /* @__PURE__ */ jsxs(Link, { to: "/contact/", children: [
             "Book a walkthrough",
             /* @__PURE__ */ jsx(ArrowRight, { className: "w-3.5 h-3.5" })
           ] })
@@ -1776,27 +1776,27 @@ const supportingDocumentation = [
   {
     title: "Freight forwarder workflow",
     description: "How forwarding teams keep documents, milestones and client updates tied to one shipment record.",
-    href: "/solutions/freight-forwarders"
+    href: "/solutions/freight-forwarders/"
   },
   {
     title: "Clearing agent workflow",
     description: "How customs-facing teams keep approvals, handoffs and shipment context traceable.",
-    href: "/solutions/clearing-agents"
+    href: "/solutions/clearing-agents/"
   },
   {
     title: "Bill of lading validation",
     description: "How a bill of lading is checked against invoice and packing list before status is shared.",
-    href: "/resources/bill-of-lading-workflow"
+    href: "/resources/bill-of-lading-workflow/"
   },
   {
     title: "Commercial invoice workflow",
     description: "How invoice data is matched back to the shipment record across operations.",
-    href: "/resources/commercial-invoice-workflow"
+    href: "/resources/commercial-invoice-workflow/"
   },
   {
     title: "Packing list workflow",
     description: "How packing-list details support cargo validation and client visibility.",
-    href: "/resources/packing-list-workflow"
+    href: "/resources/packing-list-workflow/"
   }
 ];
 function CaseStudy() {
@@ -1883,7 +1883,7 @@ function CaseStudy() {
         /* @__PURE__ */ jsx("p", { className: "text-white/86 font-medium text-lg max-w-2xl mx-auto", children: "The operational improvements translated into faster cargo clearance, fewer disputes, and measurable cost savings within the first month." })
       ] }) })
     ] }) }) }),
-    /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsx("div", { className: "max-w-2xl mx-auto", children: /* @__PURE__ */ jsx(ScrollAnimation, { children: /* @__PURE__ */ jsxs(Link, { to: "/contact", className: "block bg-[#0F1011] border border-white/08 rounded-[16px] p-8 text-center hover:border-[#5E6AD2]/50 transition-colors", children: [
+    /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsx("div", { className: "max-w-2xl mx-auto", children: /* @__PURE__ */ jsx(ScrollAnimation, { children: /* @__PURE__ */ jsxs(Link, { to: "/contact/", className: "block bg-[#0F1011] border border-white/08 rounded-[16px] p-8 text-center hover:border-[#5E6AD2]/50 transition-colors", children: [
       /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-white mb-3", children: "See how this could work for you" }),
       /* @__PURE__ */ jsx("p", { className: "text-white/50 mb-5", children: "Book a walkthrough and see how InDataFlow would run inside your operation." }),
       /* @__PURE__ */ jsxs("span", { className: "inline-flex items-center gap-2 text-[#5E6AD2] font-bold", children: [
@@ -1915,7 +1915,7 @@ function CaseStudy() {
     /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsxs("div", { className: "container-wide text-center", children: [
       /* @__PURE__ */ jsx("h2", { className: "text-3xl sm:text-4xl font-serif font-bold text-white mb-6 tracking-[-0.02em]", children: "Ready to transform your operation?" }),
       /* @__PURE__ */ jsx("p", { className: "text-white/70 text-lg mb-8 max-w-xl mx-auto", children: "See how this would run inside your operation." }),
-      /* @__PURE__ */ jsx(Button, { asChild: true, className: "inline-flex items-center gap-2", children: /* @__PURE__ */ jsxs(Link, { to: "/contact", children: [
+      /* @__PURE__ */ jsx(Button, { asChild: true, className: "inline-flex items-center gap-2", children: /* @__PURE__ */ jsxs(Link, { to: "/contact/", children: [
         "Book a walkthrough",
         /* @__PURE__ */ jsx(ArrowRight, { className: "w-4 h-4" })
       ] }) })
@@ -2139,7 +2139,7 @@ function Contact() {
             ]
           }
         ),
-        /* @__PURE__ */ jsx("p", { className: "text-xs text-white/35", children: /* @__PURE__ */ jsx(Link, { to: "/pricing", className: "underline hover:text-white", children: "See what's included in each plan" }) })
+        /* @__PURE__ */ jsx("p", { className: "text-xs text-white/35", children: /* @__PURE__ */ jsx(Link, { to: "/pricing/", className: "underline hover:text-white", children: "See what's included in each plan" }) })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
         /* @__PURE__ */ jsx(Label, { htmlFor: "volume", className: "text-white", children: "Monthly cargo volume (optional)" }),
@@ -2336,14 +2336,14 @@ function CompanyDocumentTranscript() {
   if (!document2) {
     return /* @__PURE__ */ jsx(Layout, { children: /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsxs("div", { className: "container-wide text-center", children: [
       /* @__PURE__ */ jsx("h1", { className: "text-4xl md:text-5xl leading-[1.2] font-serif font-bold text-white tracking-[-0.03em] mb-6", children: "Document not found." }),
-      /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/company-documentation", children: "Back to company documents" }) })
+      /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/company-documentation/", children: "Back to company documents" }) })
     ] }) }) });
   }
   return /* @__PURE__ */ jsx(Layout, { children: /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { children: [
     /* @__PURE__ */ jsxs(
       Link,
       {
-        to: "/company-documentation",
+        to: "/company-documentation/",
         className: "inline-flex items-center gap-2 text-sm font-mono text-white/45 hover:text-white transition-colors mb-8",
         children: [
           /* @__PURE__ */ jsx(ArrowLeft, { className: "w-4 h-4" }),
@@ -2399,7 +2399,7 @@ function CompanyDocumentTranscript() {
     /* @__PURE__ */ jsx("div", { className: "mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-3", children: companyDocuments.map((item) => /* @__PURE__ */ jsxs(
       Link,
       {
-        to: "/company-documentation/" + item.slug,
+        to: "/company-documentation/" + item.slug + "/",
         className: "rounded-[12px] border p-4 transition-colors " + (item.slug === document2.slug ? "border-[#5E6AD2]/35 bg-[#5E6AD2]/10 text-white" : "border-white/[0.08] bg-[#0F1011] text-white/55 hover:text-white hover:border-white/20"),
         children: [
           /* @__PURE__ */ jsx("div", { className: "text-sm font-medium leading-[1.4]", children: item.title }),
@@ -2678,8 +2678,8 @@ function SolutionPage({
       /* @__PURE__ */ jsx("h2", { className: "text-3xl font-serif font-bold text-white mb-4 tracking-[-0.02em]", children: "See the workflow in context" }),
       /* @__PURE__ */ jsx("p", { className: "text-lg text-white/70 mb-8", children: "Explore the product and document workflow resources to see how cargo operations stay traceable from intake to client visibility." }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col justify-center gap-3 sm:flex-row", children: [
-        /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/product", children: "Explore the product" }) }),
-        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsxs(Link, { to: "/resources", children: [
+        /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/product/", children: "Explore the product" }) }),
+        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsxs(Link, { to: "/resources/", children: [
           "Read workflow resources",
           /* @__PURE__ */ jsx(ArrowRight, { className: "ml-2 h-4 w-4" })
         ] }) })
@@ -2805,19 +2805,19 @@ const resources = [
   {
     title: "Bill of Lading workflow",
     description: "How freight teams validate a bill of lading against invoice and packing list before cargo status is shared.",
-    href: "/resources/bill-of-lading-workflow",
+    href: "/resources/bill-of-lading-workflow/",
     icon: FileBox
   },
   {
     title: "Commercial invoice workflow",
     description: "How invoice data is checked, matched and tied back to one shipment record across operations.",
-    href: "/resources/commercial-invoice-workflow",
+    href: "/resources/commercial-invoice-workflow/",
     icon: ScanText
   },
   {
     title: "Packing list workflow",
     description: "How packing list details support cargo validation, operations review and client visibility.",
-    href: "/resources/packing-list-workflow",
+    href: "/resources/packing-list-workflow/",
     icon: Files
   }
 ];
@@ -2844,8 +2844,8 @@ function Resources() {
       /* @__PURE__ */ jsx("h2", { className: "text-3xl font-serif font-bold text-white mb-4 tracking-[-0.02em]", children: "See how the workflow fits your operation" }),
       /* @__PURE__ */ jsx("p", { className: "text-lg text-white/70 mb-8", children: "Explore the product or book a walkthrough to see how InDataFlow turns document intake into a traceable shipment record." }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col justify-center gap-3 sm:flex-row", children: [
-        /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/product", children: "Explore the product" }) }),
-        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsx(Link, { to: "/contact", children: "Book a walkthrough" }) })
+        /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/product/", children: "Explore the product" }) }),
+        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsx(Link, { to: "/contact/", children: "Book a walkthrough" }) })
       ] })
     ] }) }) })
   ] });
@@ -2869,8 +2869,8 @@ function ResourceArticle({ eyebrow, title, description, steps: steps2, sections 
       /* @__PURE__ */ jsx("h2", { className: "text-3xl font-serif font-bold text-white mb-4 tracking-[-0.02em]", children: "Turn document intake into a traceable cargo record" }),
       /* @__PURE__ */ jsx("p", { className: "text-lg text-white/70 mb-8", children: "InDataFlow connects shipment documents, validation, cargo events, approvals and client updates in one operational workflow." }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col justify-center gap-3 sm:flex-row", children: [
-        /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/product", children: "Explore the product" }) }),
-        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsxs(Link, { to: "/contact", children: [
+        /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsx(Link, { to: "/product/", children: "Explore the product" }) }),
+        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsxs(Link, { to: "/contact/", children: [
           "Book a walkthrough",
           /* @__PURE__ */ jsx(ArrowRight, { className: "ml-2 h-4 w-4" })
         ] }) })
@@ -3080,185 +3080,185 @@ const staticPages = [
     }
   },
   {
-    pattern: "/product",
+    pattern: "/product/",
     config: {
       title: "Product | InDataFlow",
       description: "See how InDataFlow connects shipment documents, validation, cargo events and client updates into one traceable shipment record for freight operations.",
-      canonicalPath: "/product",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Product", canonicalStatement, "/product")]
+      canonicalPath: "/product/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Product", canonicalStatement, "/product/")]
     }
   },
   {
-    pattern: "/how-it-works",
+    pattern: "/how-it-works/",
     config: {
       title: "How InDataFlow Works | InDataFlow",
       description: "Follow the shipment workflow from document intake to validation, cargo milestones, approvals and client visibility inside InDataFlow.",
-      canonicalPath: "/how-it-works",
-      jsonLd: [organizationSchema, softwareApplicationSchema("How It Works", canonicalStatement, "/how-it-works")]
+      canonicalPath: "/how-it-works/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("How It Works", canonicalStatement, "/how-it-works/")]
     }
   },
   {
-    pattern: "/pricing",
+    pattern: "/pricing/",
     config: {
       title: "Pricing | InDataFlow",
       description: "Volume-based pricing for freight forwarders, clearing agents and logistics teams using InDataFlow to run cargo operations and document workflows.",
-      canonicalPath: "/pricing",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Pricing", canonicalStatement, "/pricing")]
+      canonicalPath: "/pricing/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Pricing", canonicalStatement, "/pricing/")]
     }
   },
   {
-    pattern: "/case-study",
+    pattern: "/case-study/",
     config: {
       title: "Case Study | InDataFlow",
       description: "See how a freight operation reduced manual follow-up, improved document control and gave clients clearer shipment visibility with InDataFlow.",
-      canonicalPath: "/case-study",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Case Study", canonicalStatement, "/case-study")]
+      canonicalPath: "/case-study/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Case Study", canonicalStatement, "/case-study/")]
     }
   },
   {
-    pattern: "/contact",
+    pattern: "/contact/",
     config: {
       title: "Book a Walkthrough | InDataFlow",
       description: "Book a walkthrough to see how InDataFlow fits your cargo operation, document intake flow and client visibility requirements.",
-      canonicalPath: "/contact",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Contact", canonicalStatement, "/contact")]
+      canonicalPath: "/contact/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Contact", canonicalStatement, "/contact/")]
     }
   },
   {
-    pattern: "/company-documentation",
+    pattern: "/company-documentation/",
     config: {
       title: "Company Documentation | InDataFlow",
       description: "Read public InDataFlow legal, privacy, contact and security documents in fully indexable website pages.",
-      canonicalPath: "/company-documentation",
+      canonicalPath: "/company-documentation/",
       jsonLd: [organizationSchema, breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Company Documentation", path: "/company-documentation" }
+        { name: "Company Documentation", path: "/company-documentation/" }
       ])]
     }
   },
   {
-    pattern: "/solutions/freight-forwarders",
+    pattern: "/solutions/freight-forwarders/",
     config: {
       title: "For Freight Forwarders | InDataFlow",
       description: "Centralize shipment documents, validation, milestones and client updates in one cargo record built for freight forwarding teams.",
-      canonicalPath: "/solutions/freight-forwarders",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Freight Forwarders", canonicalStatement, "/solutions/freight-forwarders"), breadcrumbSchema([
+      canonicalPath: "/solutions/freight-forwarders/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Freight Forwarders", canonicalStatement, "/solutions/freight-forwarders/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Solutions", path: "/solutions/freight-forwarders" },
-        { name: "Freight Forwarders", path: "/solutions/freight-forwarders" }
+        { name: "Solutions", path: "/solutions/freight-forwarders/" },
+        { name: "Freight Forwarders", path: "/solutions/freight-forwarders/" }
       ])]
     }
   },
   {
-    pattern: "/solutions/clearing-agents",
+    pattern: "/solutions/clearing-agents/",
     config: {
       title: "For Clearing Agents | InDataFlow",
       description: "Keep shipment documents, approvals, cargo milestones and operational accountability connected across customs and warehouse handoffs.",
-      canonicalPath: "/solutions/clearing-agents",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Clearing Agents", canonicalStatement, "/solutions/clearing-agents"), breadcrumbSchema([
+      canonicalPath: "/solutions/clearing-agents/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Clearing Agents", canonicalStatement, "/solutions/clearing-agents/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Solutions", path: "/solutions/clearing-agents" },
-        { name: "Clearing Agents", path: "/solutions/clearing-agents" }
+        { name: "Solutions", path: "/solutions/clearing-agents/" },
+        { name: "Clearing Agents", path: "/solutions/clearing-agents/" }
       ])]
     }
   },
   {
-    pattern: "/resources",
+    pattern: "/resources/",
     config: {
       title: "Resources | InDataFlow",
       description: "Operational guides for bills of lading, commercial invoices, packing lists and shipment document workflows in freight logistics.",
-      canonicalPath: "/resources",
+      canonicalPath: "/resources/",
       jsonLd: [organizationSchema, breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Resources", path: "/resources" }
+        { name: "Resources", path: "/resources/" }
       ])]
     }
   },
   {
-    pattern: "/resources/bill-of-lading-workflow",
+    pattern: "/resources/bill-of-lading-workflow/",
     config: {
       title: "Bill of Lading Workflow | InDataFlow",
       description: "Learn how freight teams validate a bill of lading against a commercial invoice and packing list before cargo status is shared with clients.",
-      canonicalPath: "/resources/bill-of-lading-workflow",
+      canonicalPath: "/resources/bill-of-lading-workflow/",
       type: "article",
-      jsonLd: [organizationSchema, articleSchema("How freight teams validate a bill of lading against invoice and packing list", "Operational bill of lading workflow for freight teams.", "/resources/bill-of-lading-workflow"), breadcrumbSchema([
+      jsonLd: [organizationSchema, articleSchema("How freight teams validate a bill of lading against invoice and packing list", "Operational bill of lading workflow for freight teams.", "/resources/bill-of-lading-workflow/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Resources", path: "/resources" },
-        { name: "Bill of Lading Workflow", path: "/resources/bill-of-lading-workflow" }
+        { name: "Resources", path: "/resources/" },
+        { name: "Bill of Lading Workflow", path: "/resources/bill-of-lading-workflow/" }
       ])]
     }
   },
   {
-    pattern: "/resources/commercial-invoice-workflow",
+    pattern: "/resources/commercial-invoice-workflow/",
     config: {
       title: "Commercial Invoice Workflow | InDataFlow",
       description: "See how freight teams check commercial invoice data, connect it to shipment records and keep approvals traceable across operations.",
-      canonicalPath: "/resources/commercial-invoice-workflow",
+      canonicalPath: "/resources/commercial-invoice-workflow/",
       type: "article",
-      jsonLd: [organizationSchema, articleSchema("How freight teams validate a commercial invoice inside shipment operations", "Operational commercial invoice workflow for freight teams.", "/resources/commercial-invoice-workflow"), breadcrumbSchema([
+      jsonLd: [organizationSchema, articleSchema("How freight teams validate a commercial invoice inside shipment operations", "Operational commercial invoice workflow for freight teams.", "/resources/commercial-invoice-workflow/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Resources", path: "/resources" },
-        { name: "Commercial Invoice Workflow", path: "/resources/commercial-invoice-workflow" }
+        { name: "Resources", path: "/resources/" },
+        { name: "Commercial Invoice Workflow", path: "/resources/commercial-invoice-workflow/" }
       ])]
     }
   },
   {
-    pattern: "/resources/packing-list-workflow",
+    pattern: "/resources/packing-list-workflow/",
     config: {
       title: "Packing List Workflow | InDataFlow",
       description: "Understand how packing list details support cargo validation, operational review and client visibility across freight teams.",
-      canonicalPath: "/resources/packing-list-workflow",
+      canonicalPath: "/resources/packing-list-workflow/",
       type: "article",
-      jsonLd: [organizationSchema, articleSchema("How freight teams use packing lists to verify cargo records", "Operational packing list workflow for freight teams.", "/resources/packing-list-workflow"), breadcrumbSchema([
+      jsonLd: [organizationSchema, articleSchema("How freight teams use packing lists to verify cargo records", "Operational packing list workflow for freight teams.", "/resources/packing-list-workflow/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Resources", path: "/resources" },
-        { name: "Packing List Workflow", path: "/resources/packing-list-workflow" }
+        { name: "Resources", path: "/resources/" },
+        { name: "Packing List Workflow", path: "/resources/packing-list-workflow/" }
       ])]
     }
   },
   {
-    pattern: "/login",
+    pattern: "/login/",
     config: {
       title: "Log In | InDataFlow",
       description: "Access InDataFlow client and operations portals.",
-      canonicalPath: "/login",
+      canonicalPath: "/login/",
       robots: "noindex, nofollow",
       jsonLd: [organizationSchema]
     }
   }
 ];
 const documentRoutes = companyDocuments.map((document2) => ({
-  pattern: `/company-documentation/${document2.slug}`,
+  pattern: `/company-documentation/${document2.slug}/`,
   config: {
     title: `${document2.title} | InDataFlow`,
     description: document2.description,
-    canonicalPath: `/company-documentation/${document2.slug}`,
-    jsonLd: [organizationSchema, articleSchema(document2.title, document2.description, `/company-documentation/${document2.slug}`), breadcrumbSchema([
+    canonicalPath: `/company-documentation/${document2.slug}/`,
+    jsonLd: [organizationSchema, articleSchema(document2.title, document2.description, `/company-documentation/${document2.slug}/`), breadcrumbSchema([
       { name: "Home", path: "/" },
-      { name: "Company Documentation", path: "/company-documentation" },
-      { name: document2.title, path: `/company-documentation/${document2.slug}` }
+      { name: "Company Documentation", path: "/company-documentation/" },
+      { name: document2.title, path: `/company-documentation/${document2.slug}/` }
     ])]
   }
 }));
 const prerenderRoutes = [
   "/",
-  "/product",
-  "/how-it-works",
-  "/pricing",
-  "/case-study",
-  "/contact",
-  "/company-documentation",
-  ...companyDocuments.map((document2) => `/company-documentation/${document2.slug}`),
-  "/solutions/freight-forwarders",
-  "/solutions/clearing-agents",
-  "/resources",
-  "/resources/bill-of-lading-workflow",
-  "/resources/commercial-invoice-workflow",
-  "/resources/packing-list-workflow",
-  "/login",
+  "/product/",
+  "/how-it-works/",
+  "/pricing/",
+  "/case-study/",
+  "/contact/",
+  "/company-documentation/",
+  ...companyDocuments.map((document2) => `/company-documentation/${document2.slug}/`),
+  "/solutions/freight-forwarders/",
+  "/solutions/clearing-agents/",
+  "/resources/",
+  "/resources/bill-of-lading-workflow/",
+  "/resources/commercial-invoice-workflow/",
+  "/resources/packing-list-workflow/",
+  "/login/",
   "/404"
 ];
-const sitemapRoutes = prerenderRoutes.filter((route) => route !== "/login" && route !== "/404");
+const sitemapRoutes = prerenderRoutes.filter((route) => route !== "/login/" && route !== "/404");
 function resolveSeo(urlOrPath) {
   const pathname = getPathname(urlOrPath);
   const matched = [...staticPages, ...documentRoutes].find(

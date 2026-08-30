@@ -71,10 +71,10 @@ export function ResourceArticle({ eyebrow, title, description, steps, sections }
               </p>
               <div className="flex flex-col justify-center gap-3 sm:flex-row">
                 <Button asChild>
-                  <Link to="/product">Explore the product</Link>
+                  <Link to="/product/">Explore the product</Link>
                 </Button>
                 <Button asChild variant="outline">
-                  <Link to="/contact">
+                  <Link to="/contact/">
                     Book a walkthrough
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

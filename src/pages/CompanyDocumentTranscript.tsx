@@ -17,7 +17,7 @@ export default function CompanyDocumentTranscript() {
               Document not found.
             </h1>
             <Button asChild>
-              <Link to="/company-documentation">Back to company documents</Link>
+              <Link to="/company-documentation/">Back to company documents</Link>
             </Button>
           </div>
         </section>
@@ -31,7 +31,7 @@ export default function CompanyDocumentTranscript() {
         <div className="container-wide">
           <div>
             <Link
-              to="/company-documentation"
+              to="/company-documentation/"
               className="inline-flex items-center gap-2 text-sm font-mono text-white/45 hover:text-white transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -109,7 +109,7 @@ export default function CompanyDocumentTranscript() {
               {companyDocuments.map((item) => (
                 <Link
                   key={item.slug}
-                  to={"/company-documentation/" + item.slug}
+                  to={"/company-documentation/" + item.slug + "/"}
                   className={"rounded-[12px] border p-4 transition-colors " + (item.slug === document.slug ? "border-[#5E6AD2]/35 bg-[#5E6AD2]/10 text-white" : "border-white/[0.08] bg-[#0F1011] text-white/55 hover:text-white hover:border-white/20")}
                 >
                   <div className="text-sm font-medium leading-[1.4]">{item.title}</div>

@@ -31,27 +31,27 @@ const supportingDocumentation = [
   {
     title: "Freight forwarder workflow",
     description: "How forwarding teams keep documents, milestones and client updates tied to one shipment record.",
-    href: "/solutions/freight-forwarders",
+    href: "/solutions/freight-forwarders/",
   },
   {
     title: "Clearing agent workflow",
     description: "How customs-facing teams keep approvals, handoffs and shipment context traceable.",
-    href: "/solutions/clearing-agents",
+    href: "/solutions/clearing-agents/",
   },
   {
     title: "Bill of lading validation",
     description: "How a bill of lading is checked against invoice and packing list before status is shared.",
-    href: "/resources/bill-of-lading-workflow",
+    href: "/resources/bill-of-lading-workflow/",
   },
   {
     title: "Commercial invoice workflow",
     description: "How invoice data is matched back to the shipment record across operations.",
-    href: "/resources/commercial-invoice-workflow",
+    href: "/resources/commercial-invoice-workflow/",
   },
   {
     title: "Packing list workflow",
     description: "How packing-list details support cargo validation and client visibility.",
-    href: "/resources/packing-list-workflow",
+    href: "/resources/packing-list-workflow/",
   },
 ];
 
@@ -234,7 +234,7 @@ export default function CaseStudy() {
         <div className="container-wide">
           <div className="max-w-2xl mx-auto">
             <ScrollAnimation>
-              <Link to="/contact" className="block bg-[#0F1011] border border-white/08 rounded-[16px] p-8 text-center hover:border-[#5E6AD2]/50 transition-colors">
+              <Link to="/contact/" className="block bg-[#0F1011] border border-white/08 rounded-[16px] p-8 text-center hover:border-[#5E6AD2]/50 transition-colors">
                 <h3 className="text-xl font-bold text-white mb-3">See how this could work for you</h3>
                 <p className="text-white/50 mb-5">
                   Book a walkthrough and see how InDataFlow would run inside your operation.
@@ -292,7 +292,7 @@ export default function CaseStudy() {
             See how this would run inside your operation.
           </p>
           <Button asChild className="inline-flex items-center gap-2">
-            <Link to="/contact">
+            <Link to="/contact/">
               Book a walkthrough
               <ArrowRight className="w-4 h-4" />
             </Link>

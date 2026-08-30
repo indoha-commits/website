@@ -16,18 +16,18 @@ export function CTASection() {
               Explore the product, solution pages and workflow guides that show how InDataFlow connects cargo operations, document validation and client visibility.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <Link to="/contact">
+              <Link to="/contact/">
                 <Button className="bg-[#5E6AD2] h-[44px] rounded-[10px] px-8 text-white hover:bg-[#5E6AD2]/90 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 group shadow-lg shadow-[#5E6AD2]/0 hover:shadow-[#5E6AD2]/20">
                   Book a walkthrough
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
                 </Button>
               </Link>
-              <Link to="/solutions/freight-forwarders">
+              <Link to="/solutions/freight-forwarders/">
                 <Button variant="outline" className="h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2">
                   View solutions
                 </Button>
               </Link>
-              <Link to="/resources">
+              <Link to="/resources/">
                 <Button variant="outline" className="h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2">
                   Read resources
                 </Button>

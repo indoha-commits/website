@@ -5,9 +5,9 @@ import { Menu, X } from "lucide-react";
 import logoImage from "@/assets/indataflow-logo.png";
 
 const navigation = [
-  { name: "Product", href: "/product" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Case Study", href: "/case-study" },
+  { name: "Product", href: "/product/" },
+  { name: "Pricing", href: "/pricing/" },
+  { name: "Case Study", href: "/case-study/" },
 ];
 
 export function Header() {
@@ -62,7 +62,7 @@ export function Header() {
             <Link to="/login">Log in</Link>
           </Button>
           <Button asChild>
-            <Link to="/contact">Book a walkthrough</Link>
+            <Link to="/contact/">Book a walkthrough</Link>
           </Button>
         </div>
 
@@ -96,7 +96,7 @@ export function Header() {
                 <Link to="/login" onClick={() => setMobileMenuOpen(false)}>Log in</Link>
               </Button>
               <Button asChild className="w-full">
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Book a walkthrough</Link>
+                <Link to="/contact/" onClick={() => setMobileMenuOpen(false)}>Book a walkthrough</Link>
               </Button>
             </div>
           </div>

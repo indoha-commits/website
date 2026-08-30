@@ -299,7 +299,7 @@ export default function Product() {
           className="bg-transparent relative z-10 w-full py-24 sm:py-28 md:py-32 lg:py-36 [&_h1]:mb-7 [&_p]:max-w-4xl [&_p]:text-white/75 [&_p]:leading-[1.7] [&_.mt-8]:mt-10"
         >
           <Button asChild className="w-full sm:w-auto">
-            <Link to="/contact">Book a walkthrough</Link>
+            <Link to="/contact/">Book a walkthrough</Link>
           </Button>
         </PageHeader>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#010102] to-transparent pointer-events-none z-10" />
@@ -333,7 +333,7 @@ export default function Product() {
             Book a walkthrough and see how it fits your operation.
           </p>
           <Button asChild className="inline-flex w-full sm:w-auto items-center gap-2">
-            <Link to="/contact">
+            <Link to="/contact/">
               Book a walkthrough
               <ArrowRight className="w-4 h-4" />
             </Link>

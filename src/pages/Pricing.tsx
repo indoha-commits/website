@@ -186,7 +186,7 @@ export default function Pricing() {
                               : "bg-transparent border border-white/10 text-white/60 hover:text-white hover:border-white/30 hover:-translate-y-0.5"
                           }`}
                         >
-                          <Link to="/contact">
+                          <Link to="/contact/">
                             {plan.priceUSD ? "Subscribe" : "Contact us"}
                           </Link>
                         </Button>
@@ -320,7 +320,7 @@ export default function Pricing() {
               <Button asChild
                 className="inline-flex items-center gap-3 h-[48px] px-6 bg-[#5E6AD2] rounded-[10px] text-base font-medium text-white hover:-translate-y-0.5 hover:shadow-md hover:shadow-[#5E6AD2]/10 transition-all duration-300"
               >
-                <Link to="/contact">
+                <Link to="/contact/">
                   <Calendar className="w-4 h-4" />
                   Talk to our team
                   <ArrowRight className="w-4 h-4" />
@@ -418,7 +418,7 @@ export default function Pricing() {
           <Button asChild
             className="inline-flex items-center gap-2 h-[40px] px-4 bg-[#5E6AD2] rounded-[10px] text-base font-medium text-white hover:bg-[#5E6AD2]/90 transition-all"
           >
-            <Link to="/contact">
+            <Link to="/contact/">
               Book a walkthrough
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>

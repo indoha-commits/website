@@ -98,148 +98,148 @@ const staticPages: Array<{ pattern: string; config: SeoConfig }> = [
     },
   },
   {
-    pattern: "/product",
+    pattern: "/product/",
     config: {
       title: "Product | InDataFlow",
       description: "See how InDataFlow connects shipment documents, validation, cargo events and client updates into one traceable shipment record for freight operations.",
-      canonicalPath: "/product",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Product", canonicalStatement, "/product")],
+      canonicalPath: "/product/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Product", canonicalStatement, "/product/")],
     },
   },
   {
-    pattern: "/how-it-works",
+    pattern: "/how-it-works/",
     config: {
       title: "How InDataFlow Works | InDataFlow",
       description: "Follow the shipment workflow from document intake to validation, cargo milestones, approvals and client visibility inside InDataFlow.",
-      canonicalPath: "/how-it-works",
-      jsonLd: [organizationSchema, softwareApplicationSchema("How It Works", canonicalStatement, "/how-it-works")],
+      canonicalPath: "/how-it-works/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("How It Works", canonicalStatement, "/how-it-works/")],
     },
   },
   {
-    pattern: "/pricing",
+    pattern: "/pricing/",
     config: {
       title: "Pricing | InDataFlow",
       description: "Volume-based pricing for freight forwarders, clearing agents and logistics teams using InDataFlow to run cargo operations and document workflows.",
-      canonicalPath: "/pricing",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Pricing", canonicalStatement, "/pricing")],
+      canonicalPath: "/pricing/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Pricing", canonicalStatement, "/pricing/")],
     },
   },
   {
-    pattern: "/case-study",
+    pattern: "/case-study/",
     config: {
       title: "Case Study | InDataFlow",
       description: "See how a freight operation reduced manual follow-up, improved document control and gave clients clearer shipment visibility with InDataFlow.",
-      canonicalPath: "/case-study",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Case Study", canonicalStatement, "/case-study")],
+      canonicalPath: "/case-study/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Case Study", canonicalStatement, "/case-study/")],
     },
   },
   {
-    pattern: "/contact",
+    pattern: "/contact/",
     config: {
       title: "Book a Walkthrough | InDataFlow",
       description: "Book a walkthrough to see how InDataFlow fits your cargo operation, document intake flow and client visibility requirements.",
-      canonicalPath: "/contact",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Contact", canonicalStatement, "/contact")],
+      canonicalPath: "/contact/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Contact", canonicalStatement, "/contact/")],
     },
   },
   {
-    pattern: "/company-documentation",
+    pattern: "/company-documentation/",
     config: {
       title: "Company Documentation | InDataFlow",
       description: "Read public InDataFlow legal, privacy, contact and security documents in fully indexable website pages.",
-      canonicalPath: "/company-documentation",
+      canonicalPath: "/company-documentation/",
       jsonLd: [organizationSchema, breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Company Documentation", path: "/company-documentation" },
+        { name: "Company Documentation", path: "/company-documentation/" },
       ])],
     },
   },
   {
-    pattern: "/solutions/freight-forwarders",
+    pattern: "/solutions/freight-forwarders/",
     config: {
       title: "For Freight Forwarders | InDataFlow",
       description: "Centralize shipment documents, validation, milestones and client updates in one cargo record built for freight forwarding teams.",
-      canonicalPath: "/solutions/freight-forwarders",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Freight Forwarders", canonicalStatement, "/solutions/freight-forwarders"), breadcrumbSchema([
+      canonicalPath: "/solutions/freight-forwarders/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Freight Forwarders", canonicalStatement, "/solutions/freight-forwarders/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Solutions", path: "/solutions/freight-forwarders" },
-        { name: "Freight Forwarders", path: "/solutions/freight-forwarders" },
+        { name: "Solutions", path: "/solutions/freight-forwarders/" },
+        { name: "Freight Forwarders", path: "/solutions/freight-forwarders/" },
       ])],
     },
   },
   {
-    pattern: "/solutions/clearing-agents",
+    pattern: "/solutions/clearing-agents/",
     config: {
       title: "For Clearing Agents | InDataFlow",
       description: "Keep shipment documents, approvals, cargo milestones and operational accountability connected across customs and warehouse handoffs.",
-      canonicalPath: "/solutions/clearing-agents",
-      jsonLd: [organizationSchema, softwareApplicationSchema("Clearing Agents", canonicalStatement, "/solutions/clearing-agents"), breadcrumbSchema([
+      canonicalPath: "/solutions/clearing-agents/",
+      jsonLd: [organizationSchema, softwareApplicationSchema("Clearing Agents", canonicalStatement, "/solutions/clearing-agents/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Solutions", path: "/solutions/clearing-agents" },
-        { name: "Clearing Agents", path: "/solutions/clearing-agents" },
+        { name: "Solutions", path: "/solutions/clearing-agents/" },
+        { name: "Clearing Agents", path: "/solutions/clearing-agents/" },
       ])],
     },
   },
   {
-    pattern: "/resources",
+    pattern: "/resources/",
     config: {
       title: "Resources | InDataFlow",
       description: "Operational guides for bills of lading, commercial invoices, packing lists and shipment document workflows in freight logistics.",
-      canonicalPath: "/resources",
+      canonicalPath: "/resources/",
       jsonLd: [organizationSchema, breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Resources", path: "/resources" },
+        { name: "Resources", path: "/resources/" },
       ])],
     },
   },
   {
-    pattern: "/resources/bill-of-lading-workflow",
+    pattern: "/resources/bill-of-lading-workflow/",
     config: {
       title: "Bill of Lading Workflow | InDataFlow",
       description: "Learn how freight teams validate a bill of lading against a commercial invoice and packing list before cargo status is shared with clients.",
-      canonicalPath: "/resources/bill-of-lading-workflow",
+      canonicalPath: "/resources/bill-of-lading-workflow/",
       type: "article",
-      jsonLd: [organizationSchema, articleSchema("How freight teams validate a bill of lading against invoice and packing list", "Operational bill of lading workflow for freight teams.", "/resources/bill-of-lading-workflow"), breadcrumbSchema([
+      jsonLd: [organizationSchema, articleSchema("How freight teams validate a bill of lading against invoice and packing list", "Operational bill of lading workflow for freight teams.", "/resources/bill-of-lading-workflow/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Resources", path: "/resources" },
-        { name: "Bill of Lading Workflow", path: "/resources/bill-of-lading-workflow" },
+        { name: "Resources", path: "/resources/" },
+        { name: "Bill of Lading Workflow", path: "/resources/bill-of-lading-workflow/" },
       ])],
     },
   },
   {
-    pattern: "/resources/commercial-invoice-workflow",
+    pattern: "/resources/commercial-invoice-workflow/",
     config: {
       title: "Commercial Invoice Workflow | InDataFlow",
       description: "See how freight teams check commercial invoice data, connect it to shipment records and keep approvals traceable across operations.",
-      canonicalPath: "/resources/commercial-invoice-workflow",
+      canonicalPath: "/resources/commercial-invoice-workflow/",
       type: "article",
-      jsonLd: [organizationSchema, articleSchema("How freight teams validate a commercial invoice inside shipment operations", "Operational commercial invoice workflow for freight teams.", "/resources/commercial-invoice-workflow"), breadcrumbSchema([
+      jsonLd: [organizationSchema, articleSchema("How freight teams validate a commercial invoice inside shipment operations", "Operational commercial invoice workflow for freight teams.", "/resources/commercial-invoice-workflow/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Resources", path: "/resources" },
-        { name: "Commercial Invoice Workflow", path: "/resources/commercial-invoice-workflow" },
+        { name: "Resources", path: "/resources/" },
+        { name: "Commercial Invoice Workflow", path: "/resources/commercial-invoice-workflow/" },
       ])],
     },
   },
   {
-    pattern: "/resources/packing-list-workflow",
+    pattern: "/resources/packing-list-workflow/",
     config: {
       title: "Packing List Workflow | InDataFlow",
       description: "Understand how packing list details support cargo validation, operational review and client visibility across freight teams.",
-      canonicalPath: "/resources/packing-list-workflow",
+      canonicalPath: "/resources/packing-list-workflow/",
       type: "article",
-      jsonLd: [organizationSchema, articleSchema("How freight teams use packing lists to verify cargo records", "Operational packing list workflow for freight teams.", "/resources/packing-list-workflow"), breadcrumbSchema([
+      jsonLd: [organizationSchema, articleSchema("How freight teams use packing lists to verify cargo records", "Operational packing list workflow for freight teams.", "/resources/packing-list-workflow/"), breadcrumbSchema([
         { name: "Home", path: "/" },
-        { name: "Resources", path: "/resources" },
-        { name: "Packing List Workflow", path: "/resources/packing-list-workflow" },
+        { name: "Resources", path: "/resources/" },
+        { name: "Packing List Workflow", path: "/resources/packing-list-workflow/" },
       ])],
     },
   },
   {
-    pattern: "/login",
+    pattern: "/login/",
     config: {
       title: "Log In | InDataFlow",
       description: "Access InDataFlow client and operations portals.",
-      canonicalPath: "/login",
+      canonicalPath: "/login/",
       robots: "noindex, nofollow",
       jsonLd: [organizationSchema],
     },
@@ -247,39 +247,39 @@ const staticPages: Array<{ pattern: string; config: SeoConfig }> = [
 ];
 
 const documentRoutes = companyDocuments.map((document) => ({
-  pattern: `/company-documentation/${document.slug}`,
+  pattern: `/company-documentation/${document.slug}/`,
   config: {
     title: `${document.title} | InDataFlow`,
     description: document.description,
-    canonicalPath: `/company-documentation/${document.slug}`,
-    jsonLd: [organizationSchema, articleSchema(document.title, document.description, `/company-documentation/${document.slug}`), breadcrumbSchema([
+    canonicalPath: `/company-documentation/${document.slug}/`,
+    jsonLd: [organizationSchema, articleSchema(document.title, document.description, `/company-documentation/${document.slug}/`), breadcrumbSchema([
       { name: "Home", path: "/" },
-      { name: "Company Documentation", path: "/company-documentation" },
-      { name: document.title, path: `/company-documentation/${document.slug}` },
+      { name: "Company Documentation", path: "/company-documentation/" },
+      { name: document.title, path: `/company-documentation/${document.slug}/` },
     ])],
   },
 }));
 
 export const prerenderRoutes = [
   "/",
-  "/product",
-  "/how-it-works",
-  "/pricing",
-  "/case-study",
-  "/contact",
-  "/company-documentation",
-  ...companyDocuments.map((document) => `/company-documentation/${document.slug}`),
-  "/solutions/freight-forwarders",
-  "/solutions/clearing-agents",
-  "/resources",
-  "/resources/bill-of-lading-workflow",
-  "/resources/commercial-invoice-workflow",
-  "/resources/packing-list-workflow",
-  "/login",
+  "/product/",
+  "/how-it-works/",
+  "/pricing/",
+  "/case-study/",
+  "/contact/",
+  "/company-documentation/",
+  ...companyDocuments.map((document) => `/company-documentation/${document.slug}/`),
+  "/solutions/freight-forwarders/",
+  "/solutions/clearing-agents/",
+  "/resources/",
+  "/resources/bill-of-lading-workflow/",
+  "/resources/commercial-invoice-workflow/",
+  "/resources/packing-list-workflow/",
+  "/login/",
   "/404",
 ] as const;
 
-export const sitemapRoutes = prerenderRoutes.filter((route) => route !== "/login" && route !== "/404");
+export const sitemapRoutes = prerenderRoutes.filter((route) => route !== "/login/" && route !== "/404");
 
 export function resolveSeo(urlOrPath: string): ResolvedSeo {
   const pathname = getPathname(urlOrPath);

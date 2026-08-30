@@ -7,19 +7,19 @@ const resources = [
   {
     title: "Bill of Lading workflow",
     description: "How freight teams validate a bill of lading against invoice and packing list before cargo status is shared.",
-    href: "/resources/bill-of-lading-workflow",
+    href: "/resources/bill-of-lading-workflow/",
     icon: FileBox,
   },
   {
     title: "Commercial invoice workflow",
     description: "How invoice data is checked, matched and tied back to one shipment record across operations.",
-    href: "/resources/commercial-invoice-workflow",
+    href: "/resources/commercial-invoice-workflow/",
     icon: ScanText,
   },
   {
     title: "Packing list workflow",
     description: "How packing list details support cargo validation, operations review and client visibility.",
-    href: "/resources/packing-list-workflow",
+    href: "/resources/packing-list-workflow/",
     icon: Files,
   },
 ];
@@ -75,10 +75,10 @@ export default function Resources() {
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
               <Button asChild>
-                <Link to="/product">Explore the product</Link>
+                <Link to="/product/">Explore the product</Link>
               </Button>
               <Button asChild variant="outline">
-                <Link to="/contact">Book a walkthrough</Link>
+                <Link to="/contact/">Book a walkthrough</Link>
               </Button>
             </div>
           </div>

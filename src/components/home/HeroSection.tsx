@@ -24,10 +24,10 @@ export function HeroSection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild variant="hero" className="animate-cta-glow">
-            <Link to="/contact">Book a walkthrough</Link>
+            <Link to="/contact/">Book a walkthrough</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link to="/resources">Read workflow resources</Link>
+            <Link to="/resources/">Read workflow resources</Link>
           </Button>
         </div>
       </div>

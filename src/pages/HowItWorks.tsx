@@ -182,7 +182,7 @@ export default function HowItWorks() {
             Book a call and we'll walk you through the entire process.
           </p>
           <Button asChild className="inline-flex items-center gap-2">
-            <Link to="/contact">
+            <Link to="/contact/">
               Book a walkthrough
               <ArrowRight className="w-4 h-4" />
             </Link>
