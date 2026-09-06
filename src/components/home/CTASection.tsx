@@ -16,22 +16,20 @@ export function CTASection() {
               Explore the product, solution pages and workflow guides that show how InDataFlow connects cargo operations, document validation and client visibility.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <Link to="/contact/">
-                <Button className="bg-[#5E6AD2] h-[44px] rounded-[10px] px-8 text-white hover:bg-[#5E6AD2]/90 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 group shadow-lg shadow-[#5E6AD2]/0 hover:shadow-[#5E6AD2]/20">
+              <Button asChild className="bg-[#5E6AD2] h-[44px] rounded-[10px] px-8 text-white hover:bg-[#5E6AD2]/90 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 group shadow-lg shadow-[#5E6AD2]/0 hover:shadow-[#5E6AD2]/20">
+                <Link to="/contact/">
                   Book a walkthrough
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
-                </Button>
-              </Link>
-              <Link to="/solutions/freight-forwarders/">
-                <Button variant="outline" className="h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2">
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2">
+                <Link to="/solutions/freight-forwarders/">
                   View solutions
-                </Button>
-              </Link>
-              <Link to="/resources/">
-                <Button variant="outline" className="h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2">
-                  Read resources
-                </Button>
-              </Link>
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2">
+                <Link to="/resources/">Read EAC workflow resources</Link>
+              </Button>
             </div>
           </div>
         </ScrollAnimation>

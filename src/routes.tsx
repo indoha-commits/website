@@ -15,6 +15,7 @@ import Resources from "./pages/Resources";
 import BillOfLadingWorkflow from "./pages/BillOfLadingWorkflow";
 import CommercialInvoiceWorkflow from "./pages/CommercialInvoiceWorkflow";
 import PackingListWorkflow from "./pages/PackingListWorkflow";
+import EacCorridorGuide from "./pages/EacCorridorGuide";
 
 export function SiteRoutes() {
   return (
@@ -33,6 +34,7 @@ export function SiteRoutes() {
       <Route path="/resources/bill-of-lading-workflow" element={<BillOfLadingWorkflow />} />
       <Route path="/resources/commercial-invoice-workflow" element={<CommercialInvoiceWorkflow />} />
       <Route path="/resources/packing-list-workflow" element={<PackingListWorkflow />} />
+      <Route path="/resources/eac/:slug" element={<EacCorridorGuide />} />
       <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

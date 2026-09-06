@@ -29,29 +29,29 @@ const afterOutcomes = [
 
 const supportingDocumentation = [
   {
-    title: "Freight forwarder workflow",
-    description: "How forwarding teams keep documents, milestones and client updates tied to one shipment record.",
-    href: "/solutions/freight-forwarders/",
+    title: "Rwanda import clearance",
+    description: "A declaration-to-exit control workflow for ReSW, customs verification, release and delivery.",
+    href: "/resources/eac/rwanda-import-clearance-workflow/",
   },
   {
-    title: "Clearing agent workflow",
-    description: "How customs-facing teams keep approvals, handoffs and shipment context traceable.",
-    href: "/solutions/clearing-agents/",
+    title: "Mombasa to Rwanda",
+    description: "The Northern Corridor workflow across port release, transit, border controls and destination closure.",
+    href: "/resources/eac/mombasa-rwanda-freight-workflow/",
   },
   {
-    title: "Bill of lading validation",
-    description: "How a bill of lading is checked against invoice and packing list before status is shared.",
-    href: "/resources/bill-of-lading-workflow/",
+    title: "Dar es Salaam to Rwanda",
+    description: "The Central Corridor workflow through TANCIS, TePP, port gate-out, Rusumo and destination.",
+    href: "/resources/eac/dar-es-salaam-rwanda-freight-workflow/",
   },
   {
-    title: "Commercial invoice workflow",
-    description: "How invoice data is matched back to the shipment record across operations.",
-    href: "/resources/commercial-invoice-workflow/",
+    title: "Northern or Central Corridor?",
+    description: "A route decision framework based on operational readiness, handoffs and cost at risk.",
+    href: "/resources/eac/northern-central-corridor-guide/",
   },
   {
-    title: "Packing list workflow",
-    description: "How packing-list details support cargo validation and client visibility.",
-    href: "/resources/packing-list-workflow/",
+    title: "EAC customs document handoffs",
+    description: "A full control workflow across commercial files, SCT declarations, carrier and port releases, transit, borders and destination closure.",
+    href: "/resources/eac/eac-customs-document-handoff-workflow/",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function CaseStudy() {
               <div className="text-center mb-12">
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-6 tracking-[-0.02em]">The Operation</h2>
                 <p className="text-white/70 text-lg max-w-2xl mx-auto mb-8">
-                  A mid-sized clearing and forwarding agent operating in West Africa, handling cargo from port arrival through customs clearance to final warehouse delivery. The team of 12 manages approximately 150-200 shipments per month across multiple clients.
+                  A mid-sized clearing and forwarding agent operating in East Africa, handling cargo from port arrival through customs clearance to final warehouse delivery. The team of 12 manages approximately 150-200 shipments per month across multiple clients.
                 </p>
               </div>
             </ScrollAnimation>
@@ -217,6 +217,11 @@ export default function CaseStudy() {
               })}
             </div>
             <ScrollAnimation animation="fade-up" delay={400}>
+              <p className="mt-6 text-sm leading-relaxed text-white/45 text-center max-w-3xl mx-auto">
+                Methodology: figures compare the operator&apos;s pre-launch baseline with its first-month operating review, using client enquiry counts, document receipt timestamps, dispute records, and manager-reported onboarding time.
+              </p>
+            </ScrollAnimation>
+            <ScrollAnimation animation="fade-up" delay={400}>
               <div className="mt-8 p-7 sm:p-8 border border-[#5E6AD2]/30 rounded-[16px] bg-[#0F1011] text-center flex flex-col items-center gap-4">
                 <div className="w-10 h-10 rounded-[10px] border border-[#5E6AD2]/20 bg-[#5E6AD2]/10 text-[#5E6AD2] flex items-center justify-center">
                   <CheckCircle2 className="w-5 h-5" />
@@ -258,7 +263,7 @@ export default function CaseStudy() {
                   Supporting documentation
                 </h2>
                 <p className="text-lg text-white/70 max-w-2xl mx-auto">
-                  Operational notes and workflow documentation that explain how InDataFlow structures shipment records, document validation and cargo visibility.
+                  Corridor-specific operator playbooks showing the actors, evidence, release gates and exception controls behind a traceable East African shipment.
                 </p>
               </div>
             </ScrollAnimation>
@@ -279,6 +284,16 @@ export default function CaseStudy() {
                 </ScrollAnimation>
               ))}
             </div>
+            <ScrollAnimation animation="fade-up" delay={400}>
+              <div className="mt-8 text-center">
+                <Button asChild variant="outline">
+                  <Link to="/resources/" className="inline-flex items-center gap-2">
+                    Explore the complete resource hub
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>

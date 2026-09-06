@@ -70,7 +70,7 @@ const tableSections = [
   {
     category: "Access",
     rows: [
-      { label: "Multi-user access", starter: "no", growth: "yes", volume: "yes" },
+      { label: "Multi-user access", starter: "yes", growth: "yes", volume: "yes" },
       { label: "Multi-department access", starter: "no", growth: "no", volume: "yes" },
       { label: "Custom reporting", starter: "no", growth: "no", volume: "yes" },
     ],

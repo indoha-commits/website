@@ -15,7 +15,6 @@ export function Footer() {
             <p className="text-base text-white/60 leading-[1.75] max-w-md mb-4">
               InDataFlow is a cargo operations platform that connects shipment documents, validation, events, approvals and client updates into one traceable shipment record.
             </p>
-            <p className="text-sm text-white/38 font-mono">Built for freight forwarders, clearing agents and logistics teams operating across East Africa.</p>
           </div>
 
           <div>
@@ -58,9 +57,10 @@ export function Footer() {
             <h4 className="text-xs text-white/30 uppercase tracking-[0.15em] font-mono mb-5 leading-[1.4]">Resources</h4>
             <ul className="space-y-3 mb-8">
               {[
-                { name: "Bill of Lading Workflow", href: "/resources/bill-of-lading-workflow/" },
-                { name: "Commercial Invoice Workflow", href: "/resources/commercial-invoice-workflow/" },
-                { name: "Packing List Workflow", href: "/resources/packing-list-workflow/" },
+                { name: "Rwanda Import Workflow", href: "/resources/eac/rwanda-import-clearance-workflow/" },
+                { name: "Mombasa–Rwanda Workflow", href: "/resources/eac/mombasa-rwanda-freight-workflow/" },
+                { name: "Dar–Rwanda Workflow", href: "/resources/eac/dar-es-salaam-rwanda-freight-workflow/" },
+                { name: "All Resources", href: "/resources/" },
                 { name: "Company Documents", href: "/company-documentation/" },
               ].map((link) => (
                 <li key={link.href}>

@@ -11,6 +11,8 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
+    "seo:performance": "node scripts/seo-performance-report.mjs",
+    "seo:validate": "vitest run src/test/eac-corridor-guides.test.ts",
     "test": "vitest run",
     "test:watch": "vitest"
   },

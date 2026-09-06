@@ -1,5 +1,6 @@
 import { matchPath } from "react-router-dom";
 import { companyDocuments } from "@/data/company-documents";
+import { eacCorridorGuides } from "@/data/eac-corridor-guides";
 
 const siteName = "InDataFlow";
 const siteUrl = "https://indataflow.com";
@@ -61,19 +62,33 @@ function breadcrumbSchema(items: Array<{ name: string; path: string }>) {
 }
 
 function articleSchema(headline: string, description: string, path: string) {
+  const pageUrl = `${siteUrl}${path}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${pageUrl}#article`,
     headline,
     description,
-    mainEntityOfPage: `${siteUrl}${path}`,
+    url: pageUrl,
+    inLanguage: "en",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": pageUrl,
+    },
     author: {
       "@type": "Organization",
       name: siteName,
+      url: siteUrl,
     },
     publisher: {
       "@type": "Organization",
       name: siteName,
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: defaultImage,
+      },
     },
   };
 }
@@ -184,7 +199,7 @@ const staticPages: Array<{ pattern: string; config: SeoConfig }> = [
     pattern: "/resources/",
     config: {
       title: "Resources | InDataFlow",
-      description: "Operational guides for bills of lading, commercial invoices, packing lists and shipment document workflows in freight logistics.",
+      description: "Operational EAC freight guides for Rwanda clearance, Mombasa and Dar es Salaam port workflows, the Northern and Central Corridors, and shipment-document controls.",
       canonicalPath: "/resources/",
       jsonLd: [organizationSchema, breadcrumbSchema([
         { name: "Home", path: "/" },
@@ -246,6 +261,24 @@ const staticPages: Array<{ pattern: string; config: SeoConfig }> = [
   },
 ];
 
+const corridorRoutes: Array<{ pattern: string; config: SeoConfig }> = eacCorridorGuides.map((guide) => {
+  const path = `/resources/eac/${guide.slug}/`;
+  return {
+    pattern: path,
+    config: {
+      title: `${guide.title} | InDataFlow`,
+      description: guide.description,
+      canonicalPath: path,
+      type: "article",
+      jsonLd: [organizationSchema, articleSchema(guide.title, guide.description, path), breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Resources", path: "/resources/" },
+        { name: guide.title, path },
+      ])],
+    },
+  };
+});
+
 const documentRoutes = companyDocuments.map((document) => ({
   pattern: `/company-documentation/${document.slug}/`,
   config: {
@@ -275,6 +308,7 @@ export const prerenderRoutes = [
   "/resources/bill-of-lading-workflow/",
   "/resources/commercial-invoice-workflow/",
   "/resources/packing-list-workflow/",
+  ...eacCorridorGuides.map((guide) => `/resources/eac/${guide.slug}/`),
   "/login/",
   "/404",
 ] as const;
@@ -283,7 +317,7 @@ export const sitemapRoutes = prerenderRoutes.filter((route) => route !== "/login
 
 export function resolveSeo(urlOrPath: string): ResolvedSeo {
   const pathname = getPathname(urlOrPath);
-  const matched = [...staticPages, ...documentRoutes].find((page) =>
+  const matched = [...staticPages, ...corridorRoutes, ...documentRoutes].find((page) =>
     Boolean(matchPath({ path: page.pattern, end: true }, pathname)),
   );
 

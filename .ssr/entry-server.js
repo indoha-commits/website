@@ -6,7 +6,7 @@ import * as React from "react";
 import { useState, useEffect, forwardRef, useRef, Fragment as Fragment$1 } from "react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva } from "class-variance-authority";
-import { X, Menu, Database, Clock3, FileText, UserCheck, ChevronLeft, ChevronRight, Waypoints, FileCheck2, Archive, Eye, ShieldCheck, CheckCircle2, UserX, Quote, UserRound, MapPin, GitBranch, Route, BadgeCheck, ArrowRight, Gauge, Shield, Globe, Lock, Puzzle, Rocket, Calendar, Search, ChevronDown, BriefcaseBusiness, Users, ClipboardCheck, MessageCircleQuestion, FolderOpen, TimerOff, UploadCloud, Scale, LockKeyhole, Mail, ArrowLeft, Boxes, ScanSearch, MessageSquareShare, Milestone, FileSearch, TimerReset, Landmark, Warehouse, FileBox, ScanText, Files } from "lucide-react";
+import { X, Menu, Database, Clock3, FileText, UserCheck, ChevronLeft, ChevronRight, Waypoints, FileCheck2, Archive, Eye, ShieldCheck, CheckCircle2, UserX, Quote, UserRound, MapPin, GitBranch, Route, BadgeCheck, ArrowRight, Gauge, Shield, Globe, Lock, Puzzle, Rocket, Calendar, Search, ChevronDown, BriefcaseBusiness, Users, ClipboardCheck, MessageCircleQuestion, FolderOpen, TimerOff, UploadCloud, Scale, LockKeyhole, Mail, ArrowLeft, Boxes, ScanSearch, MessageSquareShare, Milestone, FileSearch, TimerReset, Landmark, Warehouse, MapPinned, Ship, FileStack, FileBox, ScanText, Files, ShieldAlert, ExternalLink } from "lucide-react";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useTheme } from "next-themes";
@@ -374,8 +374,7 @@ function Footer() {
     /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-5 gap-10", children: [
       /* @__PURE__ */ jsxs("div", { className: "md:col-span-2", children: [
         /* @__PURE__ */ jsx(Link, { to: "/", className: "inline-flex items-center mb-4", children: /* @__PURE__ */ jsx("img", { src: logoImage, alt: "InDataFlow", className: "h-12 w-auto brightness-0 invert" }) }),
-        /* @__PURE__ */ jsx("p", { className: "text-base text-white/60 leading-[1.75] max-w-md mb-4", children: "InDataFlow is a cargo operations platform that connects shipment documents, validation, events, approvals and client updates into one traceable shipment record." }),
-        /* @__PURE__ */ jsx("p", { className: "text-sm text-white/38 font-mono", children: "Built for freight forwarders, clearing agents and logistics teams operating across East Africa." })
+        /* @__PURE__ */ jsx("p", { className: "text-base text-white/60 leading-[1.75] max-w-md mb-4", children: "InDataFlow is a cargo operations platform that connects shipment documents, validation, events, approvals and client updates into one traceable shipment record." })
       ] }),
       /* @__PURE__ */ jsxs("div", { children: [
         /* @__PURE__ */ jsx("h4", { className: "text-xs text-white/30 uppercase tracking-[0.15em] font-mono mb-5 leading-[1.4]", children: "Product" }),
@@ -398,9 +397,10 @@ function Footer() {
       /* @__PURE__ */ jsxs("div", { children: [
         /* @__PURE__ */ jsx("h4", { className: "text-xs text-white/30 uppercase tracking-[0.15em] font-mono mb-5 leading-[1.4]", children: "Resources" }),
         /* @__PURE__ */ jsx("ul", { className: "space-y-3 mb-8", children: [
-          { name: "Bill of Lading Workflow", href: "/resources/bill-of-lading-workflow/" },
-          { name: "Commercial Invoice Workflow", href: "/resources/commercial-invoice-workflow/" },
-          { name: "Packing List Workflow", href: "/resources/packing-list-workflow/" },
+          { name: "Rwanda Import Workflow", href: "/resources/eac/rwanda-import-clearance-workflow/" },
+          { name: "Mombasa–Rwanda Workflow", href: "/resources/eac/mombasa-rwanda-freight-workflow/" },
+          { name: "Dar–Rwanda Workflow", href: "/resources/eac/dar-es-salaam-rwanda-freight-workflow/" },
+          { name: "All Resources", href: "/resources/" },
           { name: "Company Documents", href: "/company-documentation/" }
         ].map((link) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: link.href, className: "text-base text-white/58 hover:text-white transition-colors leading-[1.55]", children: link.name }) }, link.href)) }),
         /* @__PURE__ */ jsx("h4", { className: "text-xs text-white/30 uppercase tracking-[0.15em] font-mono mb-3 leading-[1.4]", children: "Contact" }),
@@ -890,12 +890,12 @@ function CTASection() {
     /* @__PURE__ */ jsx("h2", { className: "text-3xl sm:text-4xl font-serif font-bold text-white mb-4 tracking-[-0.02em]", children: "One shipment record from document intake to verified cargo status." }),
     /* @__PURE__ */ jsx("p", { className: "text-lg text-white/80 leading-relaxed mb-8", children: "Explore the product, solution pages and workflow guides that show how InDataFlow connects cargo operations, document validation and client visibility." }),
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row justify-center gap-3", children: [
-      /* @__PURE__ */ jsx(Link, { to: "/contact/", children: /* @__PURE__ */ jsxs(Button, { className: "bg-[#5E6AD2] h-[44px] rounded-[10px] px-8 text-white hover:bg-[#5E6AD2]/90 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 group shadow-lg shadow-[#5E6AD2]/0 hover:shadow-[#5E6AD2]/20", children: [
+      /* @__PURE__ */ jsx(Button, { asChild: true, className: "bg-[#5E6AD2] h-[44px] rounded-[10px] px-8 text-white hover:bg-[#5E6AD2]/90 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 group shadow-lg shadow-[#5E6AD2]/0 hover:shadow-[#5E6AD2]/20", children: /* @__PURE__ */ jsxs(Link, { to: "/contact/", children: [
         "Book a walkthrough",
         /* @__PURE__ */ jsx(ArrowRight, { className: "w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" })
       ] }) }),
-      /* @__PURE__ */ jsx(Link, { to: "/solutions/freight-forwarders/", children: /* @__PURE__ */ jsx(Button, { variant: "outline", className: "h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2", children: "View solutions" }) }),
-      /* @__PURE__ */ jsx(Link, { to: "/resources/", children: /* @__PURE__ */ jsx(Button, { variant: "outline", className: "h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2", children: "Read resources" }) })
+      /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", className: "h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2", children: /* @__PURE__ */ jsx(Link, { to: "/solutions/freight-forwarders/", children: "View solutions" }) }),
+      /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", className: "h-[44px] rounded-[10px] px-8 inline-flex items-center gap-2", children: /* @__PURE__ */ jsx(Link, { to: "/resources/", children: "Read EAC workflow resources" }) })
     ] })
   ] }) }) }) });
 }
@@ -1479,7 +1479,7 @@ const tableSections = [
   {
     category: "Access",
     rows: [
-      { label: "Multi-user access", starter: "no", growth: "yes", volume: "yes" },
+      { label: "Multi-user access", starter: "yes", growth: "yes", volume: "yes" },
       { label: "Multi-department access", starter: "no", growth: "no", volume: "yes" },
       { label: "Custom reporting", starter: "no", growth: "no", volume: "yes" }
     ]
@@ -1774,29 +1774,29 @@ const afterOutcomes = [
 ];
 const supportingDocumentation = [
   {
-    title: "Freight forwarder workflow",
-    description: "How forwarding teams keep documents, milestones and client updates tied to one shipment record.",
-    href: "/solutions/freight-forwarders/"
+    title: "Rwanda import clearance",
+    description: "A declaration-to-exit control workflow for ReSW, customs verification, release and delivery.",
+    href: "/resources/eac/rwanda-import-clearance-workflow/"
   },
   {
-    title: "Clearing agent workflow",
-    description: "How customs-facing teams keep approvals, handoffs and shipment context traceable.",
-    href: "/solutions/clearing-agents/"
+    title: "Mombasa to Rwanda",
+    description: "The Northern Corridor workflow across port release, transit, border controls and destination closure.",
+    href: "/resources/eac/mombasa-rwanda-freight-workflow/"
   },
   {
-    title: "Bill of lading validation",
-    description: "How a bill of lading is checked against invoice and packing list before status is shared.",
-    href: "/resources/bill-of-lading-workflow/"
+    title: "Dar es Salaam to Rwanda",
+    description: "The Central Corridor workflow through TANCIS, TePP, port gate-out, Rusumo and destination.",
+    href: "/resources/eac/dar-es-salaam-rwanda-freight-workflow/"
   },
   {
-    title: "Commercial invoice workflow",
-    description: "How invoice data is matched back to the shipment record across operations.",
-    href: "/resources/commercial-invoice-workflow/"
+    title: "Northern or Central Corridor?",
+    description: "A route decision framework based on operational readiness, handoffs and cost at risk.",
+    href: "/resources/eac/northern-central-corridor-guide/"
   },
   {
-    title: "Packing list workflow",
-    description: "How packing-list details support cargo validation and client visibility.",
-    href: "/resources/packing-list-workflow/"
+    title: "EAC customs document handoffs",
+    description: "A full control workflow across commercial files, SCT declarations, carrier and port releases, transit, borders and destination closure.",
+    href: "/resources/eac/eac-customs-document-handoff-workflow/"
   }
 ];
 function CaseStudy() {
@@ -1809,7 +1809,7 @@ function CaseStudy() {
     /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "max-w-4xl mx-auto", children: [
       /* @__PURE__ */ jsx(ScrollAnimation, { children: /* @__PURE__ */ jsxs("div", { className: "text-center mb-12", children: [
         /* @__PURE__ */ jsx("h2", { className: "text-3xl sm:text-4xl font-serif font-bold text-white mb-6 tracking-[-0.02em]", children: "The Operation" }),
-        /* @__PURE__ */ jsx("p", { className: "text-white/70 text-lg max-w-2xl mx-auto mb-8", children: "A mid-sized clearing and forwarding agent operating in West Africa, handling cargo from port arrival through customs clearance to final warehouse delivery. The team of 12 manages approximately 150-200 shipments per month across multiple clients." })
+        /* @__PURE__ */ jsx("p", { className: "text-white/70 text-lg max-w-2xl mx-auto mb-8", children: "A mid-sized clearing and forwarding agent operating in East Africa, handling cargo from port arrival through customs clearance to final warehouse delivery. The team of 12 manages approximately 150-200 shipments per month across multiple clients." })
       ] }) }),
       /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-4", children: [
         { icon: BriefcaseBusiness, value: "150+", label: "Shipments/month" },
@@ -1878,6 +1878,7 @@ function CaseStudy() {
           /* @__PURE__ */ jsx("p", { className: "text-[15px] text-white/62 leading-relaxed", children: outcome.description })
         ] }) }, outcome.title);
       }) }),
+      /* @__PURE__ */ jsx(ScrollAnimation, { animation: "fade-up", delay: 400, children: /* @__PURE__ */ jsx("p", { className: "mt-6 text-sm leading-relaxed text-white/45 text-center max-w-3xl mx-auto", children: "Methodology: figures compare the operator's pre-launch baseline with its first-month operating review, using client enquiry counts, document receipt timestamps, dispute records, and manager-reported onboarding time." }) }),
       /* @__PURE__ */ jsx(ScrollAnimation, { animation: "fade-up", delay: 400, children: /* @__PURE__ */ jsxs("div", { className: "mt-8 p-7 sm:p-8 border border-[#5E6AD2]/30 rounded-[16px] bg-[#0F1011] text-center flex flex-col items-center gap-4", children: [
         /* @__PURE__ */ jsx("div", { className: "w-10 h-10 rounded-[10px] border border-[#5E6AD2]/20 bg-[#5E6AD2]/10 text-[#5E6AD2] flex items-center justify-center", children: /* @__PURE__ */ jsx(CheckCircle2, { className: "w-5 h-5" }) }),
         /* @__PURE__ */ jsx("p", { className: "text-white/86 font-medium text-lg max-w-2xl mx-auto", children: "The operational improvements translated into faster cargo clearance, fewer disputes, and measurable cost savings within the first month." })
@@ -1894,7 +1895,7 @@ function CaseStudy() {
     /* @__PURE__ */ jsx("section", { className: "section-padding pt-0 bg-[#010102]", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "max-w-5xl mx-auto", children: [
       /* @__PURE__ */ jsx(ScrollAnimation, { children: /* @__PURE__ */ jsxs("div", { className: "text-center mb-10", children: [
         /* @__PURE__ */ jsx("h2", { className: "text-3xl sm:text-4xl font-serif font-bold text-white mb-4 tracking-[-0.02em]", children: "Supporting documentation" }),
-        /* @__PURE__ */ jsx("p", { className: "text-lg text-white/70 max-w-2xl mx-auto", children: "Operational notes and workflow documentation that explain how InDataFlow structures shipment records, document validation and cargo visibility." })
+        /* @__PURE__ */ jsx("p", { className: "text-lg text-white/70 max-w-2xl mx-auto", children: "Corridor-specific operator playbooks showing the actors, evidence, release gates and exception controls behind a traceable East African shipment." })
       ] }) }),
       /* @__PURE__ */ jsx("div", { className: "grid sm:grid-cols-2 xl:grid-cols-3 gap-4", children: supportingDocumentation.map((item, index) => /* @__PURE__ */ jsx(ScrollAnimation, { animation: "fade-up", delay: index * 80, children: /* @__PURE__ */ jsxs(
         Link,
@@ -1910,7 +1911,11 @@ function CaseStudy() {
             ] })
           ]
         }
-      ) }, item.href)) })
+      ) }, item.href)) }),
+      /* @__PURE__ */ jsx(ScrollAnimation, { animation: "fade-up", delay: 400, children: /* @__PURE__ */ jsx("div", { className: "mt-8 text-center", children: /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsxs(Link, { to: "/resources/", className: "inline-flex items-center gap-2", children: [
+        "Explore the complete resource hub",
+        /* @__PURE__ */ jsx(ArrowRight, { className: "h-4 w-4" })
+      ] }) }) }) })
     ] }) }) }),
     /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsxs("div", { className: "container-wide text-center", children: [
       /* @__PURE__ */ jsx("h2", { className: "text-3xl sm:text-4xl font-serif font-bold text-white mb-6 tracking-[-0.02em]", children: "Ready to transform your operation?" }),
@@ -2801,7 +2806,44 @@ function ClearingAgents() {
     }
   );
 }
-const resources = [
+const corridorResources = [
+  {
+    title: "Rwanda import clearance",
+    description: "From a declaration-ready file through ReSW assessment, customs control, release and physical exit.",
+    href: "/resources/eac/rwanda-import-clearance-workflow/",
+    icon: MapPinned,
+    label: "Rwanda"
+  },
+  {
+    title: "Mombasa to Rwanda",
+    description: "Control port release, Northern Corridor transit, border handoffs and destination closure as separate states.",
+    href: "/resources/eac/mombasa-rwanda-freight-workflow/",
+    icon: Ship,
+    label: "Northern Corridor"
+  },
+  {
+    title: "Dar es Salaam to Rwanda",
+    description: "A detailed TANCIS, TePP, port gate, Rusumo and Rwanda destination workflow.",
+    href: "/resources/eac/dar-es-salaam-rwanda-freight-workflow/",
+    icon: Route,
+    label: "Central Corridor"
+  },
+  {
+    title: "Northern or Central Corridor?",
+    description: "A shipment-level route decision framework built around readiness, handoffs, cost at risk and recovery.",
+    href: "/resources/eac/northern-central-corridor-guide/",
+    icon: Waypoints,
+    label: "Route control"
+  },
+  {
+    title: "EAC customs document handoffs",
+    description: "Control declaration, carrier, port, transit, border and destination-release evidence without collapsing them into one status.",
+    href: "/resources/eac/eac-customs-document-handoff-workflow/",
+    icon: FileStack,
+    label: "Customs controls"
+  }
+];
+const documentResources = [
   {
     title: "Bill of Lading workflow",
     description: "How freight teams validate a bill of lading against invoice and packing list before cargo status is shared.",
@@ -2825,21 +2867,46 @@ function Resources() {
   return /* @__PURE__ */ jsxs(Layout, { children: [
     /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-4xl text-center", children: [
       /* @__PURE__ */ jsx("p", { className: "text-sm text-[#5E6AD2] uppercase tracking-[0.15em] font-mono mb-4", children: "Resource hub" }),
-      /* @__PURE__ */ jsx("h1", { className: "text-4xl md:text-5xl leading-[1.2] font-serif font-bold text-white tracking-[-0.03em] mb-6", children: "Practical shipment-document workflows for freight operations." }),
-      /* @__PURE__ */ jsx("p", { className: "text-lg sm:text-xl leading-[1.6] text-white/70 max-w-3xl mx-auto", children: "These guides explain what happens after shipping documents arrive: how they are checked, connected to cargo records and used to keep operations and clients aligned." })
+      /* @__PURE__ */ jsx("h1", { className: "text-4xl md:text-5xl leading-[1.2] font-serif font-bold text-white tracking-[-0.03em] mb-6", children: "East African corridor and customs workflows for freight operators." }),
+      /* @__PURE__ */ jsx("p", { className: "text-lg sm:text-xl leading-[1.6] text-white/70 max-w-3xl mx-auto", children: "Operator playbooks for Rwanda-bound cargo through Mombasa and Dar es Salaam—plus the document controls needed to keep every customs, port, border and delivery handoff traceable." })
     ] }) }) }),
-    /* @__PURE__ */ jsx("section", { className: "section-padding pt-0 bg-[#010102]", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsx("div", { className: "grid gap-5 md:grid-cols-3", children: resources.map((resource) => {
-      const Icon = resource.icon;
-      return /* @__PURE__ */ jsxs(Link, { to: resource.href, className: "rounded-[18px] border border-white/[0.08] bg-[#0F1011] p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5E6AD2]/35", children: [
-        /* @__PURE__ */ jsx("div", { className: "mb-5 flex h-11 w-11 items-center justify-center rounded-[12px] border border-[#5E6AD2]/20 bg-[#5E6AD2]/10 text-[#5E6AD2]", children: /* @__PURE__ */ jsx(Icon, { className: "h-5 w-5" }) }),
-        /* @__PURE__ */ jsx("h2", { className: "text-2xl font-serif font-bold text-white mb-3 tracking-[-0.02em]", children: resource.title }),
-        /* @__PURE__ */ jsx("p", { className: "text-white/65 leading-[1.7] mb-5", children: resource.description }),
-        /* @__PURE__ */ jsxs("span", { className: "inline-flex items-center gap-2 text-sm font-medium text-[#5E6AD2]", children: [
-          "Read resource",
-          /* @__PURE__ */ jsx(ArrowRight, { className: "h-4 w-4" })
-        ] })
-      ] }, resource.href);
-    }) }) }) }),
+    /* @__PURE__ */ jsx("section", { className: "section-padding pt-0 bg-[#010102]", children: /* @__PURE__ */ jsxs("div", { className: "container-wide", children: [
+      /* @__PURE__ */ jsxs("div", { className: "mb-10 max-w-3xl", children: [
+        /* @__PURE__ */ jsx("p", { className: "mb-3 text-sm font-mono uppercase tracking-[0.15em] text-[#5E6AD2]", children: "Corridor playbooks" }),
+        /* @__PURE__ */ jsx("h2", { className: "text-3xl font-serif font-bold tracking-[-0.02em] text-white sm:text-4xl", children: "Run the route, not just the shipment status" })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "grid gap-5 md:grid-cols-2", children: corridorResources.map((resource) => {
+        const Icon = resource.icon;
+        return /* @__PURE__ */ jsxs(Link, { to: resource.href, className: "rounded-[18px] border border-white/[0.08] bg-[#0F1011] p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5E6AD2]/35", children: [
+          /* @__PURE__ */ jsx("div", { className: "mb-5 flex h-11 w-11 items-center justify-center rounded-[12px] border border-[#5E6AD2]/20 bg-[#5E6AD2]/10 text-[#5E6AD2]", children: /* @__PURE__ */ jsx(Icon, { className: "h-5 w-5" }) }),
+          /* @__PURE__ */ jsx("p", { className: "mb-2 text-xs font-mono uppercase tracking-[0.13em] text-white/35", children: resource.label }),
+          /* @__PURE__ */ jsx("h2", { className: "text-2xl font-serif font-bold text-white mb-3 tracking-[-0.02em]", children: resource.title }),
+          /* @__PURE__ */ jsx("p", { className: "text-white/65 leading-[1.7] mb-5", children: resource.description }),
+          /* @__PURE__ */ jsxs("span", { className: "inline-flex items-center gap-2 text-sm font-medium text-[#5E6AD2]", children: [
+            "Read resource",
+            /* @__PURE__ */ jsx(ArrowRight, { className: "h-4 w-4" })
+          ] })
+        ] }, resource.href);
+      }) })
+    ] }) }),
+    /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsxs("div", { className: "container-wide", children: [
+      /* @__PURE__ */ jsxs("div", { className: "mb-10 max-w-3xl", children: [
+        /* @__PURE__ */ jsx("p", { className: "mb-3 text-sm font-mono uppercase tracking-[0.15em] text-[#5E6AD2]", children: "Document controls" }),
+        /* @__PURE__ */ jsx("h2", { className: "text-3xl font-serif font-bold tracking-[-0.02em] text-white sm:text-4xl", children: "Make the shipment file declaration-ready" })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "grid gap-5 md:grid-cols-3", children: documentResources.map((resource) => {
+        const Icon = resource.icon;
+        return /* @__PURE__ */ jsxs(Link, { to: resource.href, className: "rounded-[18px] border border-white/[0.08] bg-[#0F1011] p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5E6AD2]/35", children: [
+          /* @__PURE__ */ jsx("div", { className: "mb-5 flex h-11 w-11 items-center justify-center rounded-[12px] border border-[#5E6AD2]/20 bg-[#5E6AD2]/10 text-[#5E6AD2]", children: /* @__PURE__ */ jsx(Icon, { className: "h-5 w-5" }) }),
+          /* @__PURE__ */ jsx("h2", { className: "text-2xl font-serif font-bold text-white mb-3 tracking-[-0.02em]", children: resource.title }),
+          /* @__PURE__ */ jsx("p", { className: "text-white/65 leading-[1.7] mb-5", children: resource.description }),
+          /* @__PURE__ */ jsxs("span", { className: "inline-flex items-center gap-2 text-sm font-medium text-[#5E6AD2]", children: [
+            "Read resource ",
+            /* @__PURE__ */ jsx(ArrowRight, { className: "h-4 w-4" })
+          ] })
+        ] }, resource.href);
+      }) })
+    ] }) }),
     /* @__PURE__ */ jsx("section", { className: "section-padding bg-[#010102]", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-3xl rounded-[18px] border border-white/[0.08] bg-gradient-to-b from-white/[0.035] to-transparent p-8 text-center", children: [
       /* @__PURE__ */ jsx("h2", { className: "text-3xl font-serif font-bold text-white mb-4 tracking-[-0.02em]", children: "See how the workflow fits your operation" }),
       /* @__PURE__ */ jsx("p", { className: "text-lg text-white/70 mb-8", children: "Explore the product or book a walkthrough to see how InDataFlow turns document intake into a traceable shipment record." }),
@@ -2980,6 +3047,826 @@ function PackingListWorkflow() {
     }
   );
 }
+function CorridorGuide({ guide }) {
+  return /* @__PURE__ */ jsx(Layout, { children: /* @__PURE__ */ jsxs("article", { className: "bg-[#010102]", children: [
+    /* @__PURE__ */ jsx("section", { className: "section-padding", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-5xl", children: [
+      /* @__PURE__ */ jsx("p", { className: "mb-4 text-sm font-mono uppercase tracking-[0.15em] text-[#5E6AD2]", children: guide.eyebrow }),
+      /* @__PURE__ */ jsx("h1", { className: "mb-6 max-w-4xl text-4xl font-bold font-serif leading-[1.15] tracking-[-0.03em] text-white md:text-6xl", children: guide.title }),
+      /* @__PURE__ */ jsx("p", { className: "max-w-3xl text-lg leading-[1.7] text-white/70 sm:text-xl", children: guide.description }),
+      /* @__PURE__ */ jsxs("div", { className: "mt-8 flex flex-wrap gap-3 text-sm text-white/55", children: [
+        /* @__PURE__ */ jsx("span", { className: "rounded-full border border-white/10 bg-white/[0.03] px-4 py-2", children: "Operator playbook" }),
+        /* @__PURE__ */ jsx("span", { className: "rounded-full border border-white/10 bg-white/[0.03] px-4 py-2", children: "Import workflow" }),
+        /* @__PURE__ */ jsx("span", { className: "rounded-full border border-white/10 bg-white/[0.03] px-4 py-2", children: "Reviewed 4 September 2026" })
+      ] })
+    ] }) }) }),
+    /* @__PURE__ */ jsx("section", { className: "section-padding pt-0", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto grid max-w-5xl gap-5 lg:grid-cols-[1.4fr_1fr]", children: [
+      /* @__PURE__ */ jsxs("div", { className: "rounded-[18px] border border-[#5E6AD2]/25 bg-[#0F1011] p-7 sm:p-8", children: [
+        /* @__PURE__ */ jsxs("div", { className: "mb-5 flex items-center gap-3 text-[#5E6AD2]", children: [
+          /* @__PURE__ */ jsx(Route, { className: "h-5 w-5" }),
+          /* @__PURE__ */ jsx("p", { className: "text-sm font-mono uppercase tracking-[0.15em]", children: "Route control points" })
+        ] }),
+        /* @__PURE__ */ jsx("ol", { className: "grid gap-3 sm:grid-cols-2", children: guide.route.map((point, index) => /* @__PURE__ */ jsxs("li", { className: "flex items-start gap-3 rounded-[12px] border border-white/[0.06] bg-white/[0.02] p-4", children: [
+          /* @__PURE__ */ jsx("span", { className: "flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#5E6AD2]/12 text-xs font-bold text-[#5E6AD2]", children: index + 1 }),
+          /* @__PURE__ */ jsx("span", { className: "pt-0.5 text-white/78", children: point })
+        ] }, point)) })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "space-y-5", children: [
+        /* @__PURE__ */ jsxs("div", { className: "rounded-[18px] border border-white/[0.08] bg-[#0F1011] p-7", children: [
+          /* @__PURE__ */ jsx("p", { className: "mb-3 text-xs font-mono uppercase tracking-[0.15em] text-white/40", children: "Scope" }),
+          /* @__PURE__ */ jsx("p", { className: "leading-[1.7] text-white/72", children: guide.scope })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "rounded-[18px] border border-[#5E6AD2]/25 bg-[#5E6AD2]/[0.055] p-7", children: [
+          /* @__PURE__ */ jsx("p", { className: "mb-3 text-xs font-mono uppercase tracking-[0.15em] text-[#8B94FF]", children: "Operating rule" }),
+          /* @__PURE__ */ jsx("p", { className: "font-medium leading-[1.7] text-white/86", children: guide.operatingRule })
+        ] })
+      ] })
+    ] }) }) }),
+    /* @__PURE__ */ jsx("section", { className: "section-padding", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-5xl", children: [
+      /* @__PURE__ */ jsxs("div", { className: "mb-10 max-w-3xl", children: [
+        /* @__PURE__ */ jsx("p", { className: "mb-3 text-sm font-mono uppercase tracking-[0.15em] text-[#5E6AD2]", children: "End-to-end workflow" }),
+        /* @__PURE__ */ jsx("h2", { className: "text-3xl font-bold font-serif tracking-[-0.02em] text-white sm:text-4xl", children: "What must happen, who owns it, and what proves completion" })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "space-y-5", children: guide.stages.map((stage, index) => /* @__PURE__ */ jsx("section", { className: "rounded-[18px] border border-white/[0.08] bg-[#0F1011] p-7 sm:p-8", children: /* @__PURE__ */ jsxs("div", { className: "grid gap-7 lg:grid-cols-[190px_1fr]", children: [
+        /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("span", { className: "mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#5E6AD2]/12 text-sm font-bold text-[#5E6AD2]", children: index + 1 }),
+          /* @__PURE__ */ jsx("p", { className: "mb-2 text-xs font-mono uppercase tracking-[0.14em] text-white/35", children: stage.phase }),
+          /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-white", children: stage.title }),
+          /* @__PURE__ */ jsxs("div", { className: "mt-5 flex items-start gap-2 text-sm text-white/55", children: [
+            /* @__PURE__ */ jsx(Users, { className: "mt-0.5 h-4 w-4 shrink-0 text-[#5E6AD2]" }),
+            /* @__PURE__ */ jsxs("span", { children: [
+              "Owner: ",
+              stage.owner
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "space-y-6", children: [
+          /* @__PURE__ */ jsxs("div", { children: [
+            /* @__PURE__ */ jsx("p", { className: "mb-2 text-xs font-mono uppercase tracking-[0.14em] text-white/35", children: "Start condition" }),
+            /* @__PURE__ */ jsx("p", { className: "leading-[1.7] text-white/72", children: stage.trigger })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "grid gap-5 md:grid-cols-2", children: [
+            /* @__PURE__ */ jsxs("div", { children: [
+              /* @__PURE__ */ jsx("p", { className: "mb-3 text-xs font-mono uppercase tracking-[0.14em] text-white/35", children: "Actions" }),
+              /* @__PURE__ */ jsx("ul", { className: "space-y-2.5", children: stage.actions.map((action) => /* @__PURE__ */ jsxs("li", { className: "flex gap-2.5 text-[15px] leading-[1.65] text-white/68", children: [
+                /* @__PURE__ */ jsx(CheckCircle2, { className: "mt-1 h-4 w-4 shrink-0 text-[#5E6AD2]" }),
+                action
+              ] }, action)) })
+            ] }),
+            /* @__PURE__ */ jsxs("div", { children: [
+              /* @__PURE__ */ jsx("p", { className: "mb-3 text-xs font-mono uppercase tracking-[0.14em] text-white/35", children: "Evidence to retain" }),
+              /* @__PURE__ */ jsx("ul", { className: "space-y-2.5", children: stage.evidence.map((item) => /* @__PURE__ */ jsxs("li", { className: "flex gap-2.5 text-[15px] leading-[1.65] text-white/68", children: [
+                /* @__PURE__ */ jsx(FileCheck2, { className: "mt-1 h-4 w-4 shrink-0 text-[#5E6AD2]" }),
+                item
+              ] }, item)) })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "rounded-[12px] border border-[#5E6AD2]/18 bg-[#5E6AD2]/[0.045] p-4", children: [
+            /* @__PURE__ */ jsx("span", { className: "text-xs font-mono uppercase tracking-[0.12em] text-[#8B94FF]", children: "Handoff gate · " }),
+            /* @__PURE__ */ jsx("span", { className: "text-[15px] leading-[1.65] text-white/78", children: stage.handoff })
+          ] })
+        ] })
+      ] }) }, stage.phase)) })
+    ] }) }) }),
+    /* @__PURE__ */ jsx("section", { className: "section-padding", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-5xl", children: [
+      /* @__PURE__ */ jsx("h2", { className: "mb-8 text-3xl font-bold font-serif tracking-[-0.02em] text-white sm:text-4xl", children: "Shipment file control matrix" }),
+      /* @__PURE__ */ jsxs("div", { className: "overflow-hidden rounded-[18px] border border-white/[0.08] bg-[#0F1011]", children: [
+        /* @__PURE__ */ jsxs("div", { className: "hidden grid-cols-[0.8fr_1.25fr_1fr] gap-5 border-b border-white/[0.06] px-6 py-4 text-xs font-mono uppercase tracking-[0.12em] text-white/35 md:grid", children: [
+          /* @__PURE__ */ jsx("span", { children: "Record" }),
+          /* @__PURE__ */ jsx("span", { children: "Control" }),
+          /* @__PURE__ */ jsx("span", { children: "Completion evidence" })
+        ] }),
+        guide.documents.map((document2) => /* @__PURE__ */ jsxs("div", { className: "grid gap-3 border-b border-white/[0.06] px-6 py-5 last:border-0 md:grid-cols-[0.8fr_1.25fr_1fr] md:gap-5", children: [
+          /* @__PURE__ */ jsx("p", { className: "font-semibold text-white", children: document2.name }),
+          /* @__PURE__ */ jsx("p", { className: "text-[15px] leading-[1.65] text-white/65", children: document2.control }),
+          /* @__PURE__ */ jsx("p", { className: "text-[15px] leading-[1.65] text-white/65", children: document2.evidence })
+        ] }, document2.name))
+      ] })
+    ] }) }) }),
+    /* @__PURE__ */ jsx("section", { className: "section-padding", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-5xl", children: [
+      /* @__PURE__ */ jsxs("div", { className: "mb-8 flex items-center gap-3", children: [
+        /* @__PURE__ */ jsx(ShieldAlert, { className: "h-6 w-6 text-[#5E6AD2]" }),
+        /* @__PURE__ */ jsx("h2", { className: "text-3xl font-bold font-serif tracking-[-0.02em] text-white sm:text-4xl", children: "Exception playbook" })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "grid gap-4 lg:grid-cols-3", children: guide.exceptions.map((item) => /* @__PURE__ */ jsxs("section", { className: "rounded-[18px] border border-white/[0.08] bg-[#0F1011] p-6", children: [
+        /* @__PURE__ */ jsx("p", { className: "mb-3 text-xs font-mono uppercase tracking-[0.13em] text-[#8B94FF]", children: "Signal" }),
+        /* @__PURE__ */ jsx("h3", { className: "mb-5 text-lg font-bold text-white", children: item.signal }),
+        /* @__PURE__ */ jsx("p", { className: "mb-2 text-xs font-mono uppercase tracking-[0.13em] text-white/35", children: "Response" }),
+        /* @__PURE__ */ jsx("p", { className: "mb-5 text-[15px] leading-[1.65] text-white/65", children: item.response }),
+        /* @__PURE__ */ jsx("p", { className: "mb-2 text-xs font-mono uppercase tracking-[0.13em] text-white/35", children: "Release condition" }),
+        /* @__PURE__ */ jsx("p", { className: "text-[15px] leading-[1.65] text-white/75", children: item.release })
+      ] }, item.signal)) })
+    ] }) }) }),
+    /* @__PURE__ */ jsx("section", { className: "section-padding", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-5xl rounded-[18px] border border-white/[0.08] bg-[#0F1011] p-7 sm:p-9", children: [
+      /* @__PURE__ */ jsx("p", { className: "mb-3 text-sm font-mono uppercase tracking-[0.15em] text-[#5E6AD2]", children: "Primary sources" }),
+      /* @__PURE__ */ jsx("h2", { className: "mb-3 text-3xl font-bold font-serif tracking-[-0.02em] text-white", children: "Verify the live requirement before filing" }),
+      /* @__PURE__ */ jsx("p", { className: "mb-8 max-w-3xl leading-[1.7] text-white/62", children: "This is an operations-control guide, not a substitute for a licensed clearing agent or a commodity-specific ruling. Procedures, tariffs and permits can change; use the linked authority for the current legal requirement." }),
+      /* @__PURE__ */ jsx("div", { className: "grid gap-4 md:grid-cols-2", children: guide.sources.map((source) => /* @__PURE__ */ jsxs("a", { href: source.href, target: "_blank", rel: "noreferrer", className: "rounded-[14px] border border-white/[0.07] bg-white/[0.02] p-5 transition-colors hover:border-[#5E6AD2]/35", children: [
+        /* @__PURE__ */ jsxs("div", { className: "mb-2 flex items-start justify-between gap-4", children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-bold text-white", children: source.title }),
+          /* @__PURE__ */ jsx(ExternalLink, { className: "h-4 w-4 shrink-0 text-[#5E6AD2]" })
+        ] }),
+        /* @__PURE__ */ jsx("p", { className: "mb-3 text-sm text-white/42", children: source.organisation }),
+        /* @__PURE__ */ jsx("p", { className: "text-sm leading-[1.6] text-white/62", children: source.use })
+      ] }, source.href)) })
+    ] }) }) }),
+    /* @__PURE__ */ jsx("section", { className: "section-padding", children: /* @__PURE__ */ jsx("div", { className: "container-wide", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-5xl rounded-[18px] border border-[#5E6AD2]/25 bg-gradient-to-b from-[#5E6AD2]/[0.08] to-transparent p-8", children: [
+      /* @__PURE__ */ jsx("h2", { className: "mb-4 text-3xl font-bold font-serif text-white", children: "Make every handoff traceable" }),
+      /* @__PURE__ */ jsx("p", { className: "mb-7 max-w-3xl text-lg leading-[1.7] text-white/68", children: "InDataFlow keeps documents, reviews, releases, corridor events and client updates tied to the same shipment record." }),
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-3 sm:flex-row", children: [
+        /* @__PURE__ */ jsx(Button, { asChild: true, children: /* @__PURE__ */ jsxs(Link, { to: "/contact/", children: [
+          "Book a workflow review ",
+          /* @__PURE__ */ jsx(ArrowRight, { className: "ml-2 h-4 w-4" })
+        ] }) }),
+        /* @__PURE__ */ jsx(Button, { asChild: true, variant: "outline", children: /* @__PURE__ */ jsx(Link, { to: "/resources/", children: "Browse all resources" }) })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "mt-8 flex flex-wrap gap-x-6 gap-y-3", children: guide.related.map((item) => /* @__PURE__ */ jsxs(Link, { to: item.href, className: "text-sm text-[#8B94FF] hover:text-white", children: [
+        item.title,
+        " →"
+      ] }, item.href)) })
+    ] }) }) })
+  ] }) });
+}
+const eacSource = {
+  title: "Single Customs Territory",
+  organisation: "East African Community",
+  href: "https://www.eac.int/sct",
+  use: "Destination-state assessment and payment, customs-system interconnection and corridor-wide cargo movement."
+};
+const eacManualSource = {
+  title: "EAC customs and border manuals",
+  organisation: "East African Community",
+  href: "https://www.eac.int/documents/type/manual",
+  use: "Current Single Customs Territory and One-Stop Border Post procedure manuals."
+};
+const rwandaSource = {
+  title: "Rwanda Electronic Single Window",
+  organisation: "Rwanda Revenue Authority",
+  href: "https://www.rra.gov.rw/en/customs-services/rwanda-electronic-single-window",
+  use: "Rwanda's official single-entry system for customs declarations and regulatory information."
+};
+const commonDocuments = [
+  {
+    name: "Bill of lading",
+    control: "Match bill number, consignee, notify party, vessel/voyage, ports, container and seal references to the shipment master.",
+    evidence: "Reviewed document version plus a resolved discrepancy log."
+  },
+  {
+    name: "Commercial invoice",
+    control: "Match seller, buyer, currency, Incoterm, value, goods description and references used in the customs declaration.",
+    evidence: "Approved invoice version linked to the declaration entry."
+  },
+  {
+    name: "Packing list",
+    control: "Reconcile packages, weights, marks and container allocation against the bill of lading and physical consignment.",
+    evidence: "Quantity and weight check with exceptions signed off."
+  },
+  {
+    name: "Permits / certificates",
+    control: "Determine requirements from HS code, commodity, origin and regulator before arrival; do not treat a generic checklist as sufficient.",
+    evidence: "Valid permit, certificate of origin or inspection certificate tied to the cargo item."
+  },
+  {
+    name: "Customs declaration",
+    control: "Verify declarant, regime, tariff classification, value, origin, destination, office and supporting-document references.",
+    evidence: "Accepted declaration, assessment and channel or control status."
+  },
+  {
+    name: "Release and movement file",
+    control: "Keep customs release distinct from shipping-line delivery order, port release, transit bond and gate or exit evidence.",
+    evidence: "Each release reference, timestamp and issuing authority recorded separately."
+  }
+];
+const commonRelated = [
+  { title: "Bill of lading control", href: "/resources/bill-of-lading-workflow/" },
+  { title: "Commercial invoice control", href: "/resources/commercial-invoice-workflow/" },
+  { title: "Packing list control", href: "/resources/packing-list-workflow/" }
+];
+const eacCorridorGuides = [
+  {
+    slug: "rwanda-import-clearance-workflow",
+    eyebrow: "Rwanda customs operations",
+    title: "Rwanda import clearance: a shipment-control workflow from document readiness to exit",
+    description: "A practical control model for importers, clearing agents and operations teams coordinating a Rwanda customs entry through ReSW, verification, release and final cargo exit.",
+    route: ["Document readiness", "ReSW declaration", "Assessment and payment", "Customs channel", "Verification or query", "Release, fees and exit"],
+    scope: "Goods entering Rwanda for home use after arrival through a border post or inland clearance location. Commodity-specific permits and exemptions sit inside the same control file but must be confirmed with the responsible authority.",
+    operatingRule: "A shipment is not cleared because a declaration was submitted or duties were paid. Advance status only when the applicable verification is resolved, the customs release exists, other charges are settled and exit evidence is captured.",
+    stages: [
+      {
+        phase: "Before declaration",
+        title: "Build a declaration-ready file",
+        owner: "Importer and licensed clearing agent",
+        trigger: "Commercial terms, transport document and cargo particulars are available.",
+        actions: [
+          "Confirm importer identity and agent authority.",
+          "Reconcile bill of lading, invoice and packing list before using their data.",
+          "Determine tariff classification, customs value, origin and permit obligations.",
+          "Open discrepancies as named tasks instead of silently choosing one document."
+        ],
+        evidence: ["Signed agent authority", "Controlled document set", "Classification and permit decision", "Open-item register"],
+        handoff: "The agent confirms every mandatory field and supporting document is ready for ReSW submission."
+      },
+      {
+        phase: "Declaration",
+        title: "Submit and control the ReSW entry",
+        owner: "Licensed clearing agent",
+        trigger: "The shipment file passes the pre-declaration review.",
+        actions: [
+          "Prepare and submit the import declaration in Rwanda's Electronic Single Window.",
+          "Attach or reference the approved supporting documents.",
+          "Record the customs declaration number against the shipment.",
+          "Route assessment notices to the payer without losing separate tax document IDs."
+        ],
+        evidence: ["ReSW acceptance", "Declaration reference", "Assessment notice", "Submission timestamp and declarant"],
+        handoff: "Assessment is accepted and all payable amounts have an accountable payer and due status."
+      },
+      {
+        phase: "Customs control",
+        title: "Resolve channel, verification and queries",
+        owner: "Clearing agent with importer support",
+        trigger: "Payment is confirmed and Customs assigns the consignment to a control channel.",
+        actions: [
+          "Capture the assigned control status and any document or physical-verification request.",
+          "Schedule access to cargo when physical verification is required.",
+          "Answer queries with version-controlled evidence and preserve the response trail.",
+          "Do not publish a client-cleared milestone while a customs query remains open."
+        ],
+        evidence: ["Payment confirmation", "Channel status", "Inspection or query record", "Customs decision"],
+        handoff: "All customs controls are closed and the official release order has been issued."
+      },
+      {
+        phase: "Release and exit",
+        title: "Complete the physical and financial exit",
+        owner: "Clearing agent, warehouse and transport coordinator",
+        trigger: "Customs release order is available.",
+        actions: [
+          "Confirm any warehouse or handling charges and obtain settlement evidence.",
+          "Coordinate truck, driver and collection authorization.",
+          "Obtain the applicable exit note or gate evidence.",
+          "Close the shipment milestone only after custody transfer is confirmed."
+        ],
+        evidence: ["Release order", "Warehouse payment receipt", "Exit note or gate pass", "Delivery or custody acknowledgment"],
+        handoff: "Cargo has legally exited the controlled location and the receiving party has acknowledged custody."
+      }
+    ],
+    documents: commonDocuments,
+    exceptions: [
+      {
+        signal: "Documents disagree before filing",
+        response: "Freeze declaration data, identify the authoritative issuer and request a corrected document or documented decision.",
+        release: "The corrected version is approved and all dependent declaration fields are refreshed."
+      },
+      {
+        signal: "Customs query or verification request",
+        response: "Assign one owner, log the exact request, response evidence and next follow-up time; keep the client milestone qualified.",
+        release: "Customs records the query or verification as resolved and issues the next status."
+      },
+      {
+        signal: "Released in system, blocked at exit",
+        response: "Separate customs, warehouse, transport and gate controls to find the missing authorization or unpaid charge.",
+        release: "Exit note or gate evidence and custody transfer are both recorded."
+      }
+    ],
+    sources: [
+      rwandaSource,
+      {
+        title: "Rwanda e-Single Window",
+        organisation: "Rwanda Revenue Authority",
+        href: "https://www.sw.gov.rw/",
+        use: "Declaration access, submission guidance and live customs services."
+      },
+      eacSource,
+      eacManualSource
+    ],
+    related: [
+      { title: "Mombasa to Rwanda workflow", href: "/resources/eac/mombasa-rwanda-freight-workflow/" },
+      { title: "Dar es Salaam to Rwanda workflow", href: "/resources/eac/dar-es-salaam-rwanda-freight-workflow/" },
+      ...commonRelated
+    ]
+  },
+  {
+    slug: "mombasa-rwanda-freight-workflow",
+    eyebrow: "Northern Corridor operations",
+    title: "Mombasa to Rwanda: the freight workflow beyond a port-to-Kigali status line",
+    description: "An operator-level playbook for controlling a Rwanda-bound import from pre-arrival work at Mombasa through port release, transit movement, Uganda and Rwanda border handoffs, and destination closure.",
+    route: ["Origin document cut-off", "Port of Mombasa", "Kenya customs and port release", "Malaba or Busia", "Kampala transit leg", "Gatuna or Kagitumba", "Rwanda destination"],
+    scope: "Containerised or general cargo entering at Mombasa and moving inland to Rwanda. The exact border, terminal, inspection and permit sequence depends on the declaration, cargo type and carrier plan.",
+    operatingRule: "Track legal release, commercial release and physical movement as separate states. A customs status, shipping-line delivery order or truck dispatch is never a substitute for the other two.",
+    stages: [
+      {
+        phase: "Pre-arrival",
+        title: "Make the shipment corridor-ready",
+        owner: "Rwanda importer, clearing agents and forwarder",
+        trigger: "Carrier booking and draft shipping documents are available.",
+        actions: [
+          "Confirm destination, discharge port, consignee and transit routing across all documents.",
+          "Prepare destination-state customs work early under the EAC Single Customs Territory model.",
+          "Confirm permits, standards controls, agent appointments and carrier release requirements.",
+          "Set free-time dates, document cut-offs and escalation owners before vessel arrival."
+        ],
+        evidence: ["Approved shipping instructions", "Final document pack", "Agent appointments", "Free-time and ETA baseline"],
+        handoff: "The cargo can arrive without waiting for a preventable document, permit or payer decision."
+      },
+      {
+        phase: "Mombasa",
+        title: "Control discharge, customs and port release",
+        owner: "Kenya port clearing agent and forwarder",
+        trigger: "Vessel arrival or pre-arrival processing window opens.",
+        actions: [
+          "Track manifest and discharge against the expected container and bill references.",
+          "Submit required customs and port documentation through the applicable official systems.",
+          "Coordinate duties, taxes, inspections and regulator interventions where applicable.",
+          "Obtain and distinguish customs release, carrier delivery order and port release."
+        ],
+        evidence: ["Discharge event", "Customs entry and response", "Delivery order", "Port release and charge receipts"],
+        handoff: "The nominated truck can legally collect the correct cargo and all release references are valid."
+      },
+      {
+        phase: "Inland transit",
+        title: "Maintain customs control in motion",
+        owner: "Transporter and corridor operations desk",
+        trigger: "Cargo exits the port or controlled terminal under an approved movement.",
+        actions: [
+          "Record truck, driver, trailer, container and seal before departure.",
+          "Monitor route milestones and customs-seal or electronic-tracking exceptions.",
+          "Treat border arrival, queue, joint control and border exit as separate events.",
+          "Escalate route deviation, seal change, accident or prolonged stationary time immediately."
+        ],
+        evidence: ["Gate-out record", "Truck and seal identity", "Transit or bond reference", "Border timestamps and exception trail"],
+        handoff: "Cargo exits the final transit jurisdiction with seals and customs movement intact."
+      },
+      {
+        phase: "Rwanda closure",
+        title: "Close destination customs and delivery",
+        owner: "Rwanda clearing agent and delivery coordinator",
+        trigger: "Cargo reaches the declared Rwanda customs or delivery location.",
+        actions: [
+          "Reconcile arrival identity with the port gate-out and border records.",
+          "Complete destination customs controls and obtain release.",
+          "Settle warehouse or handling charges and secure exit evidence.",
+          "Capture proof of delivery and close the transit movement independently from commercial delivery."
+        ],
+        evidence: ["Arrival record", "Rwanda release", "Exit evidence", "Proof of delivery and empty return where applicable"],
+        handoff: "Customs movement, customer delivery and equipment obligations each have a recorded closure."
+      }
+    ],
+    documents: commonDocuments,
+    exceptions: [
+      {
+        signal: "Manifest or bill reference mismatch",
+        response: "Stop downstream reuse of the affected field and coordinate the carrier, agent and declarant around one corrected source.",
+        release: "Manifest, bill, customs entry and shipment master carry the same approved reference."
+      },
+      {
+        signal: "Port release complete, pickup not possible",
+        response: "Check carrier hold, port charges, terminal status, truck announcement, inspection hold and document validity separately.",
+        release: "The terminal accepts the nominated truck and records cargo gate-out."
+      },
+      {
+        signal: "Transit delay or seal exception",
+        response: "Preserve location and seal evidence, notify the transporter and responsible customs contacts, and avoid an unrecorded seal intervention.",
+        release: "The movement is formally regularised and the next customs control accepts the cargo."
+      }
+    ],
+    sources: [
+      {
+        title: "Cargo clearance FAQ",
+        organisation: "Kenya Ports Authority",
+        href: "https://www.kpa.co.ke/Faq",
+        use: "Official overview of port cargo-clearance documents, approvals and release requirements."
+      },
+      {
+        title: "Northern Corridor road network",
+        organisation: "Northern Corridor Transit and Transport Coordination Authority",
+        href: "https://www.ttcanc.org/road-network",
+        use: "Official corridor routes from Mombasa through Uganda toward Rwanda."
+      },
+      eacSource,
+      eacManualSource
+    ],
+    related: [
+      { title: "Northern vs Central Corridor", href: "/resources/eac/northern-central-corridor-guide/" },
+      { title: "Rwanda import clearance", href: "/resources/eac/rwanda-import-clearance-workflow/" },
+      ...commonRelated
+    ]
+  },
+  {
+    slug: "dar-es-salaam-rwanda-freight-workflow",
+    eyebrow: "Central Corridor operations",
+    title: "Dar es Salaam to Rwanda: a controlled port, transit and Rusumo workflow",
+    description: "A practical shipment-control sequence for Rwanda-bound imports using Dar es Salaam, from TANCIS and port documentation through TePP, truck release, Central Corridor transit and destination closure.",
+    route: ["Pre-arrival filing", "Dar es Salaam discharge", "TANCIS controls", "Delivery and release orders", "TePP and port charges", "Truck gate-out", "Rusumo OSBP", "Rwanda destination"],
+    scope: "Rwanda-bound cargo discharged at Dar es Salaam and moved by road through the Central Corridor and Rusumo. It focuses on handoffs; the current regulator decides commodity-specific controls.",
+    operatingRule: "At Dar es Salaam, preserve the dependency chain: customs decision, shipping-line delivery order, port invoicing and payment, truck announcement, gate ticket and physical release. Skipping the evidence between any two creates false status.",
+    stages: [
+      {
+        phase: "Pre-arrival",
+        title: "Prepare customs and port inputs",
+        owner: "Importer and registered clearing and forwarding agent",
+        trigger: "Bill of lading and commercial file are available before vessel arrival.",
+        actions: [
+          "Appoint the registered clearing and forwarding agent and retain the authority.",
+          "Validate bill of lading, invoice, packing list, origin and permit evidence.",
+          "Prepare the customs declaration and self-assessment in TANCIS as early as allowed.",
+          "Record ETA, document cut-offs, free time and the planned Rusumo movement."
+        ],
+        evidence: ["Agent authority", "Approved document set", "TANCIS submission reference", "ETA and free-time baseline"],
+        handoff: "Customs and port teams can process the cargo without waiting for missing commercial data."
+      },
+      {
+        phase: "Customs and carrier",
+        title: "Obtain the distinct release instruments",
+        owner: "Clearing and forwarding agent",
+        trigger: "Cargo is manifested and the customs declaration is under processing.",
+        actions: [
+          "Resolve TANCIS assessment, payment, document checks and physical verification where assigned.",
+          "Obtain the customs release order and the shipping agent's delivery order.",
+          "Check bill, container and declaration references before using those releases at the port.",
+          "Keep customs release and carrier commercial release as separate milestones."
+        ],
+        evidence: ["TANSAD or declaration reference", "Customs release order", "Delivery order", "Inspection and payment records"],
+        handoff: "BL, delivery order and release order are valid and ready for the port payment process."
+      },
+      {
+        phase: "Port release",
+        title: "Pay, announce the truck and gate out",
+        owner: "Clearing agent, port desk and transporter",
+        trigger: "The required release documents can be lodged with the port.",
+        actions: [
+          "Upload the required BL, delivery order and release order through the TPA payment process.",
+          "Generate and settle the port invoice using the official control reference.",
+          "Announce the assigned truck and driver and obtain the gate-in ticket.",
+          "Reconcile container and seal during pickup and preserve gate security evidence."
+        ],
+        evidence: ["TePP submission", "Port invoice and receipt", "Truck announcement and gate ticket", "Gate-out time and seal"],
+        handoff: "The identified truck leaves the port with the identified cargo under an authorised movement."
+      },
+      {
+        phase: "Central Corridor",
+        title: "Control transit through Rusumo and destination",
+        owner: "Transporter, transit desk and Rwanda clearing agent",
+        trigger: "Cargo gates out for the designated Dar es Salaam–Rusumo route.",
+        actions: [
+          "Monitor planned corridor milestones without presenting estimates as customs events.",
+          "Record arrival, control and exit timestamps at Rusumo OSBP.",
+          "Escalate tracking, seal, route or customs-message exceptions with evidence.",
+          "Complete Rwanda destination release, controlled-location exit and delivery closure."
+        ],
+        evidence: ["Transit movement reference", "Route and exception events", "Rusumo control evidence", "Rwanda release and proof of delivery"],
+        handoff: "Transit, Rwanda customs, controlled-location exit and customer delivery are all independently closed."
+      }
+    ],
+    documents: commonDocuments,
+    exceptions: [
+      {
+        signal: "TANCIS release but no port invoice",
+        response: "Check BL, delivery order, release order and TANSAD references in the port submission instead of repeating customs work.",
+        release: "The TPA invoice is generated against the correct cargo and control reference."
+      },
+      {
+        signal: "Truck announced but cargo cannot gate out",
+        response: "Separate terminal availability, security check, driver or truck mismatch, unpaid charge and active hold.",
+        release: "Gate security accepts the cargo, vehicle and release set and records gate-out."
+      },
+      {
+        signal: "Rusumo arrival without clean onward status",
+        response: "Reconcile transit reference, seals, customs messages and destination declaration; assign the unresolved control to one owner.",
+        release: "The OSBP/customs handoff is accepted and the Rwanda movement status is recorded."
+      }
+    ],
+    sources: [
+      {
+        title: "Dar es Salaam import process",
+        organisation: "Tanzania Ports Authority",
+        href: "https://ports.go.tz/index.php/en/services/port-process/import-process",
+        use: "Official BL, delivery order, release order, TePP, truck announcement and gate-release sequence."
+      },
+      {
+        title: "Central Corridor road network",
+        organisation: "Central Corridor Transit Transport Facilitation Agency",
+        href: "https://centralcorridor-ttfa.org/road-network/",
+        use: "Official Dar es Salaam–Kigali route through Rusumo OSBP."
+      },
+      eacSource,
+      rwandaSource
+    ],
+    related: [
+      { title: "Northern vs Central Corridor", href: "/resources/eac/northern-central-corridor-guide/" },
+      { title: "Rwanda import clearance", href: "/resources/eac/rwanda-import-clearance-workflow/" },
+      ...commonRelated
+    ]
+  },
+  {
+    slug: "northern-central-corridor-guide",
+    eyebrow: "EAC corridor decision control",
+    title: "Northern or Central Corridor: how Rwanda freight teams make and control the routing decision",
+    description: "A route-selection and shipment-control framework for Rwanda cargo moving through Mombasa or Dar es Salaam—based on operational readiness, not a generic promise that one corridor is always faster.",
+    route: ["Cargo and supplier profile", "Port and sailing option", "Document readiness", "Border and inland plan", "Cost-at-risk review", "Route approval", "Exception ownership"],
+    scope: "Pre-booking and live-shipment decisions for Rwanda imports. This framework does not publish static transit times or prices because sailing, congestion, border, road and commercial conditions change.",
+    operatingRule: "Choose the corridor shipment by shipment, record the assumptions behind the choice, and preserve a switch deadline. Do not reroute live cargo because of anecdote without calculating document, carrier, customs and equipment consequences.",
+    stages: [
+      {
+        phase: "Demand definition",
+        title: "Describe the shipment before comparing corridors",
+        owner: "Importer and forwarding lead",
+        trigger: "A purchase order or transport request needs a route.",
+        actions: [
+          "Record cargo type, container mode, origin, readiness date and required delivery window.",
+          "Identify regulated, hazardous, temperature-controlled, abnormal or high-value requirements.",
+          "Confirm Incoterm and which party controls ocean freight, clearance and inland transport.",
+          "Set a business deadline and cost-of-delay rather than only a target ETA."
+        ],
+        evidence: ["Cargo profile", "Commercial terms", "Required-delivery window", "Constraint and permit register"],
+        handoff: "Both corridor options are being evaluated against the same shipment requirement."
+      },
+      {
+        phase: "Option build",
+        title: "Build a comparable Mombasa and Dar plan",
+        owner: "Forwarder and nominated agents",
+        trigger: "Cargo constraints and commercial ownership are confirmed.",
+        actions: [
+          "Compare actual sailings, transshipment risk, port cut-offs and equipment terms.",
+          "Confirm agent and customs readiness at the port, transit borders and Rwanda destination.",
+          "Map Northern Corridor border options and the Central Corridor Rusumo plan.",
+          "Quote ocean, port, clearance, inland, border and equipment exposure on the same basis."
+        ],
+        evidence: ["Carrier option and validity", "Agent readiness confirmations", "Route plan", "Comparable landed logistics estimate"],
+        handoff: "Each option has named actors, dated assumptions and an executable handoff chain."
+      },
+      {
+        phase: "Risk decision",
+        title: "Score the failure modes, not just base cost",
+        owner: "Operations lead and importer",
+        trigger: "Comparable route options are available.",
+        actions: [
+          "Test document readiness against the earliest filing and arrival milestones.",
+          "Assess free time, likely inspection exposure, border handoffs and recovery options.",
+          "Price delay exposure and equipment detention separately from normal charges.",
+          "Choose the route and record why the alternative was rejected."
+        ],
+        evidence: ["Route scorecard", "Cost-at-risk estimate", "Approval record", "Switch deadline and decision owner"],
+        handoff: "The booking instruction and customs preparation follow one approved route baseline."
+      },
+      {
+        phase: "Live control",
+        title: "Manage the selected corridor by evidence",
+        owner: "Corridor operations desk",
+        trigger: "Booking is confirmed and the route baseline is active.",
+        actions: [
+          "Track carrier, customs, port, road, border and destination states independently.",
+          "Compare actual milestones to the approved baseline and explain every material variance.",
+          "Use exception thresholds for documents, port release, stationary time, seals and border dwell.",
+          "Feed actual outcomes back into the next routing decision without turning one shipment into a universal rule."
+        ],
+        evidence: ["Versioned route baseline", "Milestone timestamps", "Exception and resolution log", "Post-shipment corridor review"],
+        handoff: "The shipment closes with evidence that improves the next corridor decision."
+      }
+    ],
+    documents: [
+      {
+        name: "Route brief",
+        control: "Same cargo scope, origin readiness, delivery requirement and Incoterm for both corridor options.",
+        evidence: "Approved comparison baseline with version and owner."
+      },
+      {
+        name: "Carrier option",
+        control: "Sailing, routing, transshipment, cut-offs, free time, equipment and quote validity confirmed.",
+        evidence: "Carrier or forwarder offer retained with assumptions."
+      },
+      {
+        name: "Customs readiness",
+        control: "Port, transit, border and Rwanda destination responsibilities assigned before booking.",
+        evidence: "Named agents and filing prerequisites for each jurisdiction."
+      },
+      {
+        name: "Landed logistics estimate",
+        control: "Compare equivalent inclusions and expose detention, storage, inspection and delay risk separately.",
+        evidence: "Cost model with currency, validity and exclusions."
+      },
+      {
+        name: "Route approval",
+        control: "Decision states why the selected corridor fits this cargo and the date after which switching is no longer practical.",
+        evidence: "Approver, rationale, switch deadline and booking instruction."
+      },
+      {
+        name: "Post-shipment review",
+        control: "Separate controllable failures from external variance and compare plan to actual by milestone.",
+        evidence: "Closed exception log and corridor scorecard update."
+      }
+    ],
+    exceptions: [
+      {
+        signal: "Preferred sailing becomes unavailable",
+        response: "Rebuild both end-to-end options from the new cargo-ready date; include document and equipment consequences.",
+        release: "A new route baseline is approved before booking changes."
+      },
+      {
+        signal: "Documents miss the route cut-off",
+        response: "Quantify whether correction fits the current sailing and pre-arrival window before rolling or switching.",
+        release: "The approved document set and revised transport instruction agree."
+      },
+      {
+        signal: "Live corridor disruption",
+        response: "Locate cargo and legal status first, protect customs and equipment obligations, then compare hold, recover or reroute options.",
+        release: "A named authority approves the recovery plan and all actors acknowledge the revised handoffs."
+      }
+    ],
+    sources: [
+      {
+        title: "Northern Corridor road network",
+        organisation: "Northern Corridor Transit and Transport Coordination Authority",
+        href: "https://www.ttcanc.org/road-network",
+        use: "Official Mombasa corridor routing through Uganda toward Rwanda."
+      },
+      {
+        title: "Central Corridor overview and network",
+        organisation: "Central Corridor Transit Transport Facilitation Agency",
+        href: "https://centralcorridor-ttfa.org/overview/",
+        use: "Official corridor mandate and Dar es Salaam connection to Rwanda and other member states."
+      },
+      {
+        title: "Central Corridor road network",
+        organisation: "Central Corridor Transit Transport Facilitation Agency",
+        href: "https://centralcorridor-ttfa.org/road-network/",
+        use: "Official Dar es Salaam–Kigali routing through Rusumo."
+      },
+      eacSource
+    ],
+    related: [
+      { title: "Mombasa to Rwanda workflow", href: "/resources/eac/mombasa-rwanda-freight-workflow/" },
+      { title: "Dar es Salaam to Rwanda workflow", href: "/resources/eac/dar-es-salaam-rwanda-freight-workflow/" },
+      { title: "Rwanda import clearance", href: "/resources/eac/rwanda-import-clearance-workflow/" },
+      { title: "EAC customs document handoffs", href: "/resources/eac/eac-customs-document-handoff-workflow/" }
+    ]
+  },
+  {
+    slug: "eac-customs-document-handoff-workflow",
+    eyebrow: "Cross-border document control",
+    title: "EAC customs document handoffs: from commercial file to destination release",
+    description: "An operator-level control model for Rwanda-bound maritime imports, showing how commercial, carrier, port, transit and customs records must agree before each handoff can safely advance.",
+    route: ["Commercial file", "SCT declaration", "Carrier and port release", "Transit control", "Border handoff", "Destination release and delivery"],
+    scope: "Rwanda-bound containerised imports moving through Mombasa or Dar es Salaam under the EAC Single Customs Territory. This workflow controls document states and evidence across parties; commodity, exemption and regulator requirements must still be confirmed shipment by shipment.",
+    operatingRule: "Never collapse declaration accepted, duties paid, customs released, carrier delivery order, port release, transit authorised, gate-out and delivered into one ‘cleared’ status. Each is a separate control with its own issuer, reference, timestamp and evidence.",
+    stages: [
+      {
+        phase: "Commercial readiness",
+        title: "Create one authoritative shipment file",
+        owner: "Importer and origin forwarder",
+        trigger: "The purchase order, Incoterm and cargo-ready details are confirmed.",
+        actions: [
+          "Record the contracting parties, Incoterm, named place, cargo description and payment currency as the commercial baseline.",
+          "Reconcile invoice lines to packing-list packages, weights, marks and container allocation.",
+          "Validate draft bill-of-lading parties, routing, container and seal data before final issue.",
+          "Identify certificate, permit and inspection requirements from the actual commodity, origin and intended use.",
+          "Assign an owner and correction deadline to every mismatch instead of copying an unverified value downstream."
+        ],
+        evidence: ["Approved commercial baseline", "Reconciled invoice and packing list", "Reviewed transport-document draft", "Permit and certificate register", "Versioned discrepancy log"],
+        handoff: "The destination clearing agent accepts a controlled, internally consistent pre-declaration file."
+      },
+      {
+        phase: "Destination declaration",
+        title: "File and control the SCT customs entry",
+        owner: "Rwanda importer and licensed clearing agent",
+        trigger: "The transport reference and declaration-supporting documents are ready.",
+        actions: [
+          "Confirm tariff classification, customs value, origin, regime and destination office before submission.",
+          "Submit the destination-state entry through the applicable customs or single-window process and retain the submission identity.",
+          "Link every attached or referenced document to its approved version in the shipment file.",
+          "Record assessment, payment, selectivity and customs-query states separately.",
+          "Send any amendment back through the same invoice, packing-list, transport-document and declaration reconciliation."
+        ],
+        evidence: ["Accepted declaration reference", "Supporting-document index", "Assessment and payment records", "Control-channel status", "Amendment and query trail"],
+        handoff: "The customs entry is accepted, financial responsibility is resolved and any outstanding control is explicitly owned."
+      },
+      {
+        phase: "First port of entry",
+        title: "Synchronise carrier, customs and port releases",
+        owner: "Port clearing agent and transport coordinator",
+        trigger: "Manifest data, destination declaration and vessel-arrival information are available.",
+        actions: [
+          "Match manifest and bill-of-lading references to the destination declaration and shipment master.",
+          "Obtain the shipping-line delivery order without treating it as customs or port release.",
+          "Complete the port or terminal release workflow, charges and pickup requirements for the selected gateway.",
+          "Confirm the customs movement or transit authority required before gate-out.",
+          "Verify truck, driver, container and seal data before issuing the collection instruction."
+        ],
+        evidence: ["Manifest reconciliation", "Carrier delivery order", "Customs release or movement authority", "Port or terminal release", "Gate ticket and truck assignment"],
+        handoff: "Cargo has all independent authorisations required for legal gate-out and controlled transit."
+      },
+      {
+        phase: "Transit and border",
+        title: "Protect the bond, seal and custody chain",
+        owner: "Transit agent, transporter and border clearing agents",
+        trigger: "The port releases cargo to the identified truck under the approved transit movement.",
+        actions: [
+          "Capture gate-out time, truck, driver, container, seal and electronic-tracking references.",
+          "Monitor route events against the authorised movement and escalate unexplained stops or seal events.",
+          "Pre-alert the border team with the declaration, transit and vehicle references they must reconcile.",
+          "Record exit and entry confirmations as separate jurisdictional events.",
+          "Keep the transit bond or guarantee open until the responsible customs authority confirms acquittal or closure."
+        ],
+        evidence: ["Port gate-out event", "Transit declaration or movement reference", "Bond and tracking record", "Border exit and entry events", "Seal verification and exception log"],
+        handoff: "The border movement is accepted, cargo remains under an accountable customs state and destination arrival is pre-advised."
+      },
+      {
+        phase: "Destination closure",
+        title: "Separate customs release, physical exit and delivery",
+        owner: "Rwanda clearing agent, warehouse and delivery team",
+        trigger: "The consignment reaches the destination control point or approved delivery process.",
+        actions: [
+          "Confirm arrival against the same container, seal, vehicle and declaration identities used in transit.",
+          "Resolve destination customs verification or document queries with version-controlled evidence.",
+          "Capture the official customs release independently from warehouse, depot or gate permissions.",
+          "Record physical exit and custody transfer before publishing a delivered milestone.",
+          "Close equipment return, transit acquittal and post-entry amendments as separate follow-up obligations."
+        ],
+        evidence: ["Destination arrival record", "Customs decision and release", "Exit note or gate pass", "Proof of delivery", "Bond closure, equipment return and amendment archive"],
+        handoff: "Legal release, physical exit, customer custody and remaining financial or equipment obligations are all reconciled."
+      }
+    ],
+    documents: [
+      {
+        name: "Commercial instruction and Incoterm",
+        control: "State the exact Incoterm, named place, buyer, seller, consignee and party responsible for each freight and clearance task.",
+        evidence: "Approved purchase or shipping instruction linked to the shipment baseline."
+      },
+      ...commonDocuments,
+      {
+        name: "Manifest and carrier delivery order",
+        control: "Reconcile carrier references, consignee, vessel, ports, containers and release conditions without confusing carrier release with customs release.",
+        evidence: "Manifest match plus valid delivery-order reference and issue timestamp."
+      },
+      {
+        name: "Transit, bond and tracking file",
+        control: "Link the movement reference, guarantee or bond, route, vehicle, seal and tracking identities to the same customs entry.",
+        evidence: "Transit authority, bond status, tracking events and border confirmations."
+      },
+      {
+        name: "Destination exit and delivery file",
+        control: "Keep destination customs release, controlled-location exit, proof of delivery and equipment return as distinct closure events.",
+        evidence: "Release order, exit note, signed delivery record and equipment-return confirmation."
+      }
+    ],
+    exceptions: [
+      {
+        signal: "Manifest or bill-of-lading data does not match the declaration",
+        response: "Stop the affected release step, identify the authoritative issuer and map every declaration, port and carrier field that depends on the correction.",
+        release: "The amended source document and every dependent system record reconcile to the shipment master."
+      },
+      {
+        signal: "Customs challenges classification, origin or value",
+        response: "Record the exact question, responsible decision maker, evidence supplied and financial impact; keep payment and release states qualified.",
+        release: "The customs decision, resulting assessment and any declaration amendment are stored together."
+      },
+      {
+        signal: "One party says ‘released’ while cargo cannot move",
+        response: "Check customs, carrier, port, transit, payment and gate controls independently to locate the missing authority.",
+        release: "Every release required at that location has its own valid reference and the gate or exit event is confirmed."
+      },
+      {
+        signal: "Seal, route, tracking or bond exception during transit",
+        response: "Preserve location and custody evidence, notify the responsible customs and transport parties and prevent an unsupported delivery-status update.",
+        release: "The competent authority records the resolution and the movement or bond returns to a valid state."
+      },
+      {
+        signal: "A commercial document changes after declaration",
+        response: "Freeze uncontrolled replacements, assess every downstream field and obtain the required customs or carrier amendment before reuse.",
+        release: "The superseded version is retained, the approved amendment is traceable and all operational teams use the same current set."
+      }
+    ],
+    sources: [
+      eacSource,
+      eacManualSource,
+      rwandaSource,
+      {
+        title: "Cargo clearance requirements",
+        organisation: "Kenya Ports Authority",
+        href: "https://www.kpa.co.ke/Faq",
+        use: "Official overview of the core documents used to clear imports through Kenyan ports."
+      },
+      {
+        title: "Import process",
+        organisation: "Tanzania Ports Authority",
+        href: "https://ports.go.tz/index.php/en/services/port-process/import-process",
+        use: "Official sequence for customs, carrier and port documentation and cargo gate release in Tanzania."
+      }
+    ],
+    related: [
+      { title: "Rwanda import clearance", href: "/resources/eac/rwanda-import-clearance-workflow/" },
+      { title: "Mombasa to Rwanda workflow", href: "/resources/eac/mombasa-rwanda-freight-workflow/" },
+      { title: "Dar es Salaam to Rwanda workflow", href: "/resources/eac/dar-es-salaam-rwanda-freight-workflow/" },
+      { title: "Bill of lading control", href: "/resources/bill-of-lading-workflow/" }
+    ]
+  }
+];
+const eacCorridorGuideBySlug = Object.fromEntries(
+  eacCorridorGuides.map((guide) => [guide.slug, guide])
+);
+function EacCorridorGuide() {
+  const { slug = "" } = useParams();
+  const guide = eacCorridorGuideBySlug[slug];
+  if (!guide) return /* @__PURE__ */ jsx(NotFound, {});
+  return /* @__PURE__ */ jsx(CorridorGuide, { guide });
+}
 function SiteRoutes() {
   return /* @__PURE__ */ jsxs(Routes, { children: [
     /* @__PURE__ */ jsx(Route$1, { path: "/", element: /* @__PURE__ */ jsx(Index, {}) }),
@@ -2996,6 +3883,7 @@ function SiteRoutes() {
     /* @__PURE__ */ jsx(Route$1, { path: "/resources/bill-of-lading-workflow", element: /* @__PURE__ */ jsx(BillOfLadingWorkflow, {}) }),
     /* @__PURE__ */ jsx(Route$1, { path: "/resources/commercial-invoice-workflow", element: /* @__PURE__ */ jsx(CommercialInvoiceWorkflow, {}) }),
     /* @__PURE__ */ jsx(Route$1, { path: "/resources/packing-list-workflow", element: /* @__PURE__ */ jsx(PackingListWorkflow, {}) }),
+    /* @__PURE__ */ jsx(Route$1, { path: "/resources/eac/:slug", element: /* @__PURE__ */ jsx(EacCorridorGuide, {}) }),
     /* @__PURE__ */ jsx(Route$1, { path: "/login", element: /* @__PURE__ */ jsx(Login, {}) }),
     /* @__PURE__ */ jsx(Route$1, { path: "*", element: /* @__PURE__ */ jsx(NotFound, {}) })
   ] });
@@ -3044,19 +3932,32 @@ function breadcrumbSchema(items) {
   };
 }
 function articleSchema(headline, description, path) {
+  const pageUrl = `${siteUrl}${path}`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${pageUrl}#article`,
     headline,
     description,
-    mainEntityOfPage: `${siteUrl}${path}`,
+    url: pageUrl,
+    inLanguage: "en",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": pageUrl
+    },
     author: {
       "@type": "Organization",
-      name: siteName
+      name: siteName,
+      url: siteUrl
     },
     publisher: {
       "@type": "Organization",
-      name: siteName
+      name: siteName,
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: defaultImage
+      }
     }
   };
 }
@@ -3166,7 +4067,7 @@ const staticPages = [
     pattern: "/resources/",
     config: {
       title: "Resources | InDataFlow",
-      description: "Operational guides for bills of lading, commercial invoices, packing lists and shipment document workflows in freight logistics.",
+      description: "Operational EAC freight guides for Rwanda clearance, Mombasa and Dar es Salaam port workflows, the Northern and Central Corridors, and shipment-document controls.",
       canonicalPath: "/resources/",
       jsonLd: [organizationSchema, breadcrumbSchema([
         { name: "Home", path: "/" },
@@ -3227,6 +4128,23 @@ const staticPages = [
     }
   }
 ];
+const corridorRoutes = eacCorridorGuides.map((guide) => {
+  const path = `/resources/eac/${guide.slug}/`;
+  return {
+    pattern: path,
+    config: {
+      title: `${guide.title} | InDataFlow`,
+      description: guide.description,
+      canonicalPath: path,
+      type: "article",
+      jsonLd: [organizationSchema, articleSchema(guide.title, guide.description, path), breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Resources", path: "/resources/" },
+        { name: guide.title, path }
+      ])]
+    }
+  };
+});
 const documentRoutes = companyDocuments.map((document2) => ({
   pattern: `/company-documentation/${document2.slug}/`,
   config: {
@@ -3255,13 +4173,14 @@ const prerenderRoutes = [
   "/resources/bill-of-lading-workflow/",
   "/resources/commercial-invoice-workflow/",
   "/resources/packing-list-workflow/",
+  ...eacCorridorGuides.map((guide) => `/resources/eac/${guide.slug}/`),
   "/login/",
   "/404"
 ];
 const sitemapRoutes = prerenderRoutes.filter((route) => route !== "/login/" && route !== "/404");
 function resolveSeo(urlOrPath) {
   const pathname = getPathname(urlOrPath);
-  const matched = [...staticPages, ...documentRoutes].find(
+  const matched = [...staticPages, ...corridorRoutes, ...documentRoutes].find(
     (page) => Boolean(matchPath({ path: page.pattern, end: true }, pathname))
   );
   if (!matched) {
