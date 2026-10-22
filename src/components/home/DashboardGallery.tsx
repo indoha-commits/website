@@ -29,7 +29,7 @@ export function DashboardGallery() {
               preload="auto"
               className="absolute inset-0 h-full w-full scale-[1.012] object-cover object-center contrast-[1.08] saturate-[1.06] brightness-[1.03] [backface-visibility:hidden] [transform:translateZ(0)_scale(1.012)]"
             >
-              <source src="/homepage_The_full_picture_hd.mp4" type="video/mp4" />
+              <source src="/indataflow3.mp4" type="video/mp4" />
             </video>
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0)_16%,rgba(0,0,0,0)_72%,rgba(0,0,0,0.30))]" />
             <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/[0.08]" />

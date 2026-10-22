@@ -472,7 +472,7 @@ function DashboardGallery() {
               playsInline: true,
               preload: "auto",
               className: "absolute inset-0 h-full w-full scale-[1.012] object-cover object-center contrast-[1.08] saturate-[1.06] brightness-[1.03] [backface-visibility:hidden] [transform:translateZ(0)_scale(1.012)]",
-              children: /* @__PURE__ */ jsx("source", { src: "/homepage_The_full_picture_hd.mp4", type: "video/mp4" })
+              children: /* @__PURE__ */ jsx("source", { src: "/indataflow3.mp4", type: "video/mp4" })
             }
           ),
           /* @__PURE__ */ jsx("div", { className: "pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0)_16%,rgba(0,0,0,0)_72%,rgba(0,0,0,0.30))]" }),
@@ -1249,7 +1249,7 @@ function Product() {
         title: "Your operation, finally under control.",
         description: "Your command center for daily operations. See what is happening, what needs attention, and what happens next without chasing updates across WhatsApp, email, and spreadsheets.",
         tilt: true,
-        imageSrc: "/indataflow_product_page_video_v2_longer_transitions.mp4",
+        imageSrc: "/indataflow.mp4",
         imageAlt: "Internal operations dashboard showing cargo timeline, active shipments, and exception alerts"
       }
     ),
@@ -1259,7 +1259,7 @@ function Product() {
         eyebrow: "AI connected",
         title: "Information comes from everywhere. Control lives in one place.",
         description: "AI agents connect the messages, documents, and systems your operation already depends on, turning fragmented information into structured operational context.",
-        imageSrc: "/indataflow_product_page_video_2_v2_richer.mp4",
+        imageSrc: "/indataflow2.mp4",
         imageAlt: "Operational timeline showing aggregated events from WhatsApp, email, documents, and connected systems into a single feed"
       }
     ),
