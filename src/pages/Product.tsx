@@ -310,7 +310,7 @@ export default function Product() {
         title="Your operation, finally under control."
         description="Your command center for daily operations. See what is happening, what needs attention, and what happens next without chasing updates across WhatsApp, email, and spreadsheets."
         tilt
-        imageSrc="/indataflow_product_page_video_v2_longer_transitions.mp4"
+        imageSrc="./indataflow2.mp4"
         imageAlt="Internal operations dashboard showing cargo timeline, active shipments, and exception alerts"
       />
 
